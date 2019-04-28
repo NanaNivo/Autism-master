@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string-array name="catger_list">
+         <item>I_want
+         </item>
+        <item>I_am</item>
+        <item>I_play</item>
+    </string-array>
+    <string-array name="list_felling">
+         <item>happy
+         </item>
+        <item>sad</item>
+        <item>angry</item>
+    </string-array>
+</resources>

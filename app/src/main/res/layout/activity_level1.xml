@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns="http://schemas.android.com/apk/res-auto"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="4"
+        android:background="@android:color/background_light"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/dialog_frame"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:orientation="horizontal">
+            </LinearLayout>
+
+            <android:com.example.project.SquareImageView
+                android:id="@+id/image_level1"
+                android:background="@drawable/shadow"
+                android:scaleType="centerCrop"
+                android:layout_weight="0.7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:background="@mipmap/favo" />
+
+            <Button
+                android:id="@+id/revert1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:background="@mipmap/back" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <GridView
+            android:id="@+id/gridlist1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:stretchMode="columnWidth"
+            android:numColumns="2"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="5dp"
+            />
+
+    </LinearLayout>
+    </RelativeLayout>

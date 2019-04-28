@@ -1,0 +1,107 @@
+{
+  "phh.json":
+  [
+    {"id": 2, "name": "انا بدي", "Image": "iwant.jpg", "parent": "root", "ِAudio" :"i_need.mp3","level1":"false","fav":0},
+
+    {"id": 3, "name": "أنا", "Image": "iam.jpg", "parent": "root" ,"ِAudio" :"i.mp3","level1":"false","fav":0},
+
+    {"id": 4, "name": "فرحان", "Image": "happy.jpg", "parent": "أنا" ,"ِAudio" :"happy.mp3","level1":"true","fav":0},
+
+    {"id": 5, "name": "معصب", "Image": "angry.jpg", "parent": "أنا" ,"ِAudio" :"mp3.خبز","level1":"true","fav":0},
+
+    {"id": 6, "name": "زعلان", "Image": "sad.jpg", "parent": "أنا" ,"ِAudio" : "sad.mp3","level1":"true","fav":0},
+
+    {"id": 7, "name": "ألعب", "Image": "play.jpg", "parent": "انا بدي" ,"ِAudio" : "play.mp3","level1":"false","fav":0},
+
+   {"id": 8, "name": "خايف", "Image": "scared.jpg", "parent": "أنا" ,"ِAudio" :"mp3.خبز","level1":"true","fav":0},
+
+    {"id": 9, "name": "مرضان", "Image": "sick.jpg", "parent": "أنا" ,"ِAudio" :"sick.mp3","level1":"true","fav":0},
+
+   {"id": 10, "name": "تعبان", "Image": "tired.jpg", "parent": "أنا" ,"ِAudio" :"tired.mp3","level1":"true","fav":0},
+
+    {"id": 11 , "name": "اكل", "Image": "eat.jpg", "parent": "انا بدي" ,"ِAudio" :"eat.mp3","level1":"false","fav":0},
+
+    {"id": 12 , "name": "خبز", "Image": "bread.jpg", "parent": "اكل" ,"ِAudio" :"bread.mp3","level1":"true","fav":0},
+
+    {"id": 13 , "name": "Cookies", "Image": "cookies.jpg", "parent": "اكل" ,"ِAudio" :"cookies.mp3","level1":"true","fav":0},
+
+    {"id": 14 , "name": "لبن", "Image": "yogurt.jpg", "parent": "اكل" ,"ِAudio":"laban.mp3","level1":"true","fav":0},
+
+    {"id": 15 , "name": "كريب", "Image": "pancakes.jpg", "parent": "اكل" ,"ِAudio":"kerab.mp3","level1":"true","fav":0},
+
+    {"id": 16 , "name": "جبنة", "Image": "cheese.jpg", "parent": "اكل" ,"ِAudio":"cheese.mp3","level1":"true","fav":0},
+
+    {"id": 17 , "name": "بيض", "Image": "egg.jpg", "parent": "اكل" ,"ِAudio":"eggs.mp3","level1":"true","fav":0},
+
+    {"id": 18 , "name": "مربى", "Image": "jam.jpg", "parent": "اكل" ,"ِAudio":"mraba.mp3","level1":"true","fav":0},
+
+    {"id": 19 , "name": "شيبس", "Image": "chips.jpg", "parent": "اكل" ,"ِAudio":"Chips.mp3","level1":"true","fav":0},
+
+    {"id": 20 , "name": "بيتزا", "Image": "pizza.jpg", "parent": "اكل" ,"ِAudio":"Pizza.mp3","level1":"true","fav":0},
+
+    {"id": 21 , "name": "أشرب", "Image": "drink.jpg", "parent": "انا بدي" ,"ِAudio":"drink.mp3","level1":"false","fav":0},
+
+    {"id": 22 , "name": "مي", "Image": "water.jpg", "parent": "أشرب" ,"ِAudio":"water.mp3","level1":"true","fav":0},
+
+    {"id": 23 , "name": "حليب", "Image": "milk.jpg", "parent": "أشرب" ,"ِAudio":"milk.mp3","level1":"true","fav":0},
+
+    {"id": 24 , "name": "برتقال", "Image": "orange.jpg", "parent": "أشرب" ,"ِAudio":"orange.mp3","level1":"true","fav":0},
+
+    {"id": 25 , "name": "شوكولا", "Image": "chocolate.jpg", "parent": "أشرب" ,"ِAudio":"chocolate.mp3","level1":"true","fav":0},
+
+    {"id": 26 , "name": "كومبيوتر", "Image": "computer.jpg", "parent": "ألعب" ,"ِAudio":"pc.mp3","level1":"true","fav":0},
+
+    {"id": 27 , "name": "Slide", "Image": "slide.jpg", "parent": "ألعب" ,"ِAudio":"mp3.خبز","level1":"true","fav":0},
+
+    {"id": 28 , "name": "Bubbles", "Image": "bubbles.jpg", "parent": "ألعب" ,"ِAudio":"mp3.خبز","level1":"true","fav":0},
+
+    {"id": 29 , "name": "طابة", "Image": "ball.jpg", "parent": "ألعب" ,"ِAudio":"ball.mp3","level1":"true","fav":0},
+
+    {"id": 30 , "name": "تركيب الصور", "Image": "puzzle.jpg", "parent": "ألعب" ,"ِAudio":"tarkebPhoto.mp3","level1":"true","fav":0},
+
+    {"id": 31 , "name": "بسيارة", "Image": "cars.jpg", "parent": "ألعب" ,"ِAudio":"car.mp3","level1":"true","fav":0},
+
+    {"id": 32 , "name": "Bowling", "Image": "bowling.jpg", "parent": "ألعب" ,"ِAudio":"poling.mp3","level1":"true","fav":0},
+
+    {"id": 33 , "name": "روح", "Image": "go.jpg", "parent": "انا بدي" ,"ِAudio":"ro7.mp3","level1":"false","fav":0},
+
+    {"id": 34 , "name": "أعمل نونو", "Image": "bathroom.jpg", "parent": "روح" ,"ِAudio":"nono.mp3","level1":"true","fav":0},
+
+    {"id": 35 , "name": "علبيت", "Image": "home.jpg", "parent": "روح" ,"ِAudio":"to_home.mp3","level1":"true","fav":0},
+
+    {"id": 36 , "name": "علمدرسة", "Image": "school.jpg", "parent": "روح" ,"ِAudio":"to_school.mp3","level1":"true","fav":0},
+
+    {"id": 37 , "name": "عجنينة", "Image": "park.jpg", "parent": "روح" ,"ِAudio":"to_garden.mp3","level1":"true","fav":0},
+
+    {"id": 38 , "name": "علبحر", "Image": "beach.jpg", "parent": "روح" ,"ِAudio":"to_sea.mp3","level1":"true","fav":0},
+
+    {"id": 39 , "name": "علمول", "Image": "mall.jpg", "parent": "روح" ,"ِAudio":"to_mol.mp3","level1":"true","fav":0},
+
+    {"id": 40 , "name": "أحضر تلفزيون", "Image": "watch_tv.jpg", "parent": "انا بدي","ِAudio":"watch_tv.mp3","level1":"true","fav":0},
+
+    {"id": 41 , "name": "نام", "Image": "sleep.jpg", "parent": "انا بدي" ,"ِAudio":"sleep.mp3","level1":"false","fav":0},
+
+    {"id": 42 , "name": "حمام", "Image": "bathe.jpg", "parent": "انا بدي" ,"ِAudio":"washing.mp3","level1":"true","fav":0},
+
+    {"id": 43 , "name": "People", "Image": "people.jpg", "parent": "انا بدي" ,"ِAudio":"mp3.خبز","level1":"false","fav":0},
+
+    {"id": 44 , "name": "ماما", "Image": "mom.jpg", "parent": "People" ,"ِAudio":"mama.mp3","level1":"true","fav":0},
+
+    {"id": 45 , "name": "بابا", "Image": "dad.jpg", "parent": "People" ,"ِAudio":"baba.mp3","level1":"true","fav":0},
+
+   {"id": 46, "name": "اضافة", "Image": "add.jpg", "parent": "root" ,"ِAudio" :"","level1":"false","fav":0},
+
+   {"id": 47, "name": "اضافة", "Image": "add.jpg", "parent": "أنا" ,"ِAudio" :"","level1":"false","fav":0},
+
+   {"id": 48, "name": "اضافة", "Image": "add.jpg", "parent": "اكل" ,"ِAudio" :"","level1":"false","fav":0},
+
+   {"id": 49, "name": "اضافة", "Image": "add.jpg", "parent":  "أشرب" ,"ِAudio" :"","level1":"false","fav":0},
+
+   {"id": 50, "name": "اضافة", "Image": "add.jpg", "parent":  "ألعب" ,"ِAudio" :"","level1":"false","fav":0},
+
+   {"id": 50, "name": "اضافة", "Image": "add.jpg", "parent":  "روح" ,"ِAudio" :"","level1":"false","fav":0},
+
+   {"id": 50, "name": "اضافة", "Image": "add.jpg", "parent":  "People" ,"ِAudio" :"","level1":"false","fav":0}
+
+  ]
+}
