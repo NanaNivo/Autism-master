@@ -52,12 +52,16 @@ public class addphotos extends AppCompatActivity {
 
     private long startHTime = 0L;
     private Handler customHandler = new Handler();
+    String temp_parent1=null;
     // static  String path,text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addphotos);
+        Intent rever_act1 = getIntent();
+        temp_parent1= rever_act1.getExtras().getString("perent");
+       // Toast.makeText(addphotos.this,temp_parent1,Toast.LENGTH_LONG).show();
         addimage = (ImageView) findViewById(R.id.addimage);
         cam = (Button) findViewById(R.id.camera);
         gallery = (Button) findViewById(R.id.galary);
@@ -155,6 +159,7 @@ public class addphotos extends AppCompatActivity {
                 Intent intt = new Intent(getApplicationContext(), MainActivity.class);
                 intt.putExtra("path", text_phot.getText().toString());
                 intt.putExtra("voice", text_phot.getText().toString());
+                intt.putExtra("perent", temp_parent1);
                 //Toast.makeText(addphotos.this,text_phot.getText().toString(),Toast.LENGTH_LONG).show();
                 intt.putExtra("text",text_phot.getText().toString());
                 find_intent=1;
