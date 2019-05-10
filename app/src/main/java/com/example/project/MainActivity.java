@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
 
         file = new File(this.getFilesDir(), "storag_file4.txt");
         // file.delete();
-       // wtite_file();
+        //wtite_file();
 
         // write_file_image();
         // read_file("storag_image.txt");

@@ -4,6 +4,8 @@
     package="com.example.project">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -23,6 +25,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".level1"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
@@ -31,7 +36,7 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".hello"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

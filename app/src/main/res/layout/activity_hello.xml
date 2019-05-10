@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#C9C8CE"
-    tools:context=".hello">
+    android:background="@drawable/spl"
+
+    tools:context=".hello"
+    android:orientation="vertical">
 
 
 
@@ -15,21 +17,17 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Autism"
         android:textAlignment="center"
         android:gravity="center"
-        android:textColor="#9C5F5FB1"
+        android:textColor="@color/colorAccent"
         android:textSize="60dp"
-        android:textStyle="bold"
-
-        />
+        android:textStyle="bold" />
 
 
 
 
+</LinearLayout>
 
-
-
-</RelativeLayout>

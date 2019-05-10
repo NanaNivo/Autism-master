@@ -2,10 +2,13 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <translate
-        android:duration="6000"
-        android:fromYDelta="1500"
-        android:toYDelta="0"
-        />
+
+
+    <alpha android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:interpolator="@android:anim/accelerate_interpolator"
+        android:duration="600"
+        android:repeatMode="reverse"
+        android:repeatCount="infinite"/>
 
 </set>
