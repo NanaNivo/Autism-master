@@ -18,6 +18,7 @@ public class hello extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello);
 
+
       yourFilePath = this.getFilesDir() + "/"+"images"+"/";
        yourAudioPath=this.getFilesDir() + "/"+"audio"+"/";
 
@@ -26,9 +27,21 @@ public class hello extends AppCompatActivity {
                 try {
                     sleep(1200);
 
-                    Intent intent=new Intent(getApplicationContext(), com.example.project.LoginActivity.class);
-                    startActivity(intent);
-                    finish();
+                    if (SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()) {
+                        finish();
+                        if(SharedPrefManager.getInstance(getApplicationContext()).getUser_level() == 1){
+                            startActivity(new Intent(getApplicationContext(), level1.class));
+                        }else{
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        }
+
+                    }else {
+                        Intent intent=new Intent(getApplicationContext(), com.example.project.LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();

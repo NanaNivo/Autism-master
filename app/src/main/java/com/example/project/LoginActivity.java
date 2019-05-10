@@ -36,14 +36,13 @@ import java.util.Map;
 
 public class LoginActivity extends Activity {
 
-   // private static final String TAG = RegisterActivity.class.getSimpleName();
+
     private Button btnLogin;
-  //  private Button btnLinkToRegister;
+
     private EditText inputEmail;
     private EditText inputPassword;
     private ProgressDialog pDialog;
-   // private SessionManager session;
-   // private SQLiteHandler db;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
