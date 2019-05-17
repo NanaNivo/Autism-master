@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -44,6 +45,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 import static com.example.project.hello.yourAudioPath;
 import static com.example.project.hello.yourFilePath;
@@ -76,6 +79,7 @@ public class MainActivity extends Activity {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
 
 
         final String[] list_of_categ_name = getResources().getStringArray(R.array.catger_list);
@@ -539,6 +543,8 @@ public class MainActivity extends Activity {
         con=1;
 
     }
+
+
 }
 
 

@@ -138,12 +138,14 @@ public class LoginActivity extends Activity {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
+
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        hideDialog();
                         Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
