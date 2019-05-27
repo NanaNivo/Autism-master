@@ -30,6 +30,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 import static android.Manifest.permission.RECORD_AUDIO;
@@ -61,21 +62,28 @@ public class addphotos extends AppCompatActivity {
         setContentView(R.layout.activity_addphotos);
         Intent rever_act1 = getIntent();
         temp_parent1= rever_act1.getExtras().getString("perent");
-       // Toast.makeText(addphotos.this,temp_parent1,Toast.LENGTH_LONG).show();
+        // Toast.makeText(addphotos.this,temp_parent1,Toast.LENGTH_LONG).show();
         addimage = (ImageView) findViewById(R.id.addimage);
         cam = (Button) findViewById(R.id.camera);
         gallery = (Button) findViewById(R.id.galary);
-       stor_imag = (Button) findViewById(R.id.store);
+        stor_imag = (Button) findViewById(R.id.store);
         record_voic = (Button) findViewById(R.id.voice);
         text_phot=(EditText) findViewById(R.id.nam_add_pbot);
         timerTextView=(TextView)findViewById(R.id.time1);
         gallery.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
-                Intent i = new Intent(
-                        Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                int namsize=text_phot.getText().length();
+                if(namsize<5)
+                {
+                    Toast.makeText(addphotos.this,"please First Enter the name First",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent i = new Intent(
+                            Intent.ACTION_PICK,
+                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
-                startActivityForResult(i, 1);
+                    startActivityForResult(i, 1);
+                }
 
             }
         });
@@ -89,16 +97,13 @@ public class addphotos extends AppCompatActivity {
         record_voic.setOnClickListener(new OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             public void onClick(View arg0) {
-           /*   Intent ii = new Intent(
-                      String.valueOf(MediaStore.Audio.Media.RECORD_SOUND_ACTION));
-
-
-             startActivityForResult(ii, 2);*/
-
-
-
-                    if(temp==0) {
+                int namsize=text_phot.getText().length();
+                if (namsize < 5) {
+                    Toast.makeText(addphotos.this, "please First Enter the name ", Toast.LENGTH_LONG).show();
+                } else {
+                    if (temp == 0) {
                         mediaRecorder = new MediaRecorder();
+
                         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
 
                         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
@@ -113,7 +118,9 @@ public class addphotos extends AppCompatActivity {
                         try {
                             mediaRecorder.prepare();
                             mediaRecorder.start();
+                            timeSwapBuff = 0l;
                             startHTime = SystemClock.uptimeMillis();
+
                             customHandler.postDelayed(updateTimerThread, 0);
                             temp = 1;
                             record_voic.setClickable(true);
@@ -124,17 +131,16 @@ public class addphotos extends AppCompatActivity {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
                         }
-                    }
-                    else
-                    {
+                    } else {
                         timeSwapBuff += timeInMilliseconds;
                         customHandler.removeCallbacks(updateTimerThread);
                         mediaRecorder.stop();
 
-                        temp=0;
+                        temp = 0;
                     }
 
 
+                }
             }
         });
    /*    record_voic.setOnLongClickListener(new View.OnLongClickListener() {
@@ -156,15 +162,37 @@ public class addphotos extends AppCompatActivity {
 
         stor_imag.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
-                Intent intt = new Intent(getApplicationContext(), MainActivity.class);
-                intt.putExtra("path", text_phot.getText().toString());
-                intt.putExtra("voice", text_phot.getText().toString());
-                intt.putExtra("perent", temp_parent1);
-                //Toast.makeText(addphotos.this,text_phot.getText().toString(),Toast.LENGTH_LONG).show();
-                intt.putExtra("text",text_phot.getText().toString());
-                find_intent=1;
-                startActivity(intt);
+                // char cc = text_phot.getText().charAt(0);
+                int namsize = text_phot.getText().length();
+                String s = null;
+                if (namsize ==0 && mediaRecorder == null && image_loaded == null) {
+                    Toast.makeText(addphotos.this, "plese enter tha information ", Toast.LENGTH_LONG).show();
+                } else {
+                    if (namsize < 5) {
+                        text_phot.setText(" ");
+                        //addimage.setImageBitmap(BitmapFactory.decodeFile(null));
+                        // timerTextView.setText(null);
+                        Toast.makeText(addphotos.this, "plese enter tha name correctly ", Toast.LENGTH_LONG).show();
+                    }
+                    if (mediaRecorder == null) {
+                        Toast.makeText(addphotos.this, "plese enter the voice ", Toast.LENGTH_LONG).show();
+                    }
+                    if (image_loaded == null) {
+                        Toast.makeText(addphotos.this, "plese enter the image ", Toast.LENGTH_LONG).show();
+                    }
 
+                    if (namsize >= 5 && mediaRecorder != null && image_loaded != null) {
+                        Intent intt = new Intent(getApplicationContext(), MainActivity.class);
+                        intt.putExtra("path", pp);
+                        intt.putExtra("voice", vv);
+                        intt.putExtra("perent", temp_parent1);
+                        //Toast.makeText(addphotos.this,text_phot.getText().toString(),Toast.LENGTH_LONG).show();
+                        intt.putExtra("text", text_phot.getText().toString());
+                        find_intent = 1;
+                        startActivity(intt);
+                    }
+
+                }
             }
         });
 
@@ -186,9 +214,9 @@ public class addphotos extends AppCompatActivity {
             cursor.moveToFirst();
 
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-          String picturePath = cursor.getString(columnIndex);
+            String picturePath = cursor.getString(columnIndex);
             cursor.close();
-        //  Toast.makeText(addphotos.this, picturePath,Toast.LENGTH_LONG).show();
+            //  Toast.makeText(addphotos.this, picturePath,Toast.LENGTH_LONG).show();
 
             addimage.setImageBitmap(BitmapFactory.decodeFile(picturePath));
             image_loaded =saveToInternalStorage(BitmapFactory.decodeFile(picturePath));
@@ -217,17 +245,17 @@ public class addphotos extends AppCompatActivity {
 
 
 
-          //    Toast.makeText(addphotos.this, mediaRecorder.toString(),Toast.LENGTH_LONG).show();
-         //  voice_loaded =saveToInternalStorage(BitmapFactory.decodeFile(voicePath));
+            //    Toast.makeText(addphotos.this, mediaRecorder.toString(),Toast.LENGTH_LONG).show();
+            //  voice_loaded =saveToInternalStorage(BitmapFactory.decodeFile(voicePath));
 
-        // voice_loaded= voice_loaded+".mp3";
+            // voice_loaded= voice_loaded+".mp3";
 
             Toast.makeText(addphotos.this, voice_loaded,Toast.LENGTH_LONG).show();
         }
     }
     private String saveToInternalStorage(Bitmap bitmapImage){
         // Create imageDir
-        File mypath=new File(yourFilePath,text_phot.getText().toString());
+        File mypath=new File(yourFilePath,pp);
 
         FileOutputStream fos = null;
         try {
@@ -241,14 +269,16 @@ public class addphotos extends AppCompatActivity {
         }
         return mypath.getAbsolutePath();
     }
+   public String vv=String.valueOf(Math.random());
+    public String pp=String.valueOf(Math.random());
     private String saveToInternalStorageVoice() {
 
-        File mypath = new File(yourAudioPath, text_phot.getText().toString());
+        File mypath = new File(yourAudioPath, vv);
 
-       FileOutputStream foss ;
+        FileOutputStream foss ;
         try {
 
-             foss = new FileOutputStream(mypath);
+            foss = new FileOutputStream(mypath);
 
         } catch (Exception e) {
             e.printStackTrace();
