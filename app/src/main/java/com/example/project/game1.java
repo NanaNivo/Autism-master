@@ -277,11 +277,12 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                            {
                                c++;
                            }
-
                             edit_fileFinal();
-
                             if (counter < 6) {
                                 arrayanswer = fill_array_answer();
+                                img1.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(0).phot_img));
+                                img2.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(1).phot_img));
+                                img3.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(2).phot_img));
                                // container.removeView(vw);
                               //  owner.addView(vw);
                                // ((GifDrawable) hap.getDrawable()).stop();
@@ -379,7 +380,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                     coun.setText(String.valueOf(counter));
 
                     MediaPlayer pp = Play(yourAudioPath + "ok.mp3");
-                    // ((GifDrawable) hap.getDrawable()).reset();
+                    ((GifDrawable) hap.getDrawable()).reset();
 
                     int c = 0;
                     while(pp.isPlaying())
@@ -391,6 +392,9 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
 
                     if (counter < 6) {
                         arrayanswer = fill_array_answer();
+                        img1.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(0).phot_img));
+                        img2.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(1).phot_img));
+                        img3.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(2).phot_img));
                         //((GifDrawable) hap.getDrawable()).stop();
 
                         Play(audio);
@@ -535,6 +539,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
 
 
                     }
+                   // Toast.makeText(this, temp.get(0).toString(),Toast.LENGTH_LONG).show();
                     return  temp;
                 }
             }
@@ -626,10 +631,10 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
 
 
         try {
-              if(pathName.equals("ok.mp3"))
+          /*    if(pathName.equals("ok.mp3"))
              {
                   ((GifDrawable) hap.getDrawable()).reset();
-            }
+            }*/
             player.setDataSource(pathName);
             player.prepare();
 

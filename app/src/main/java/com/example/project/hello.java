@@ -113,7 +113,7 @@ public class hello extends AppCompatActivity {
                         }
 
                     }else {
-                        Intent intent=new Intent(getApplicationContext(), com.example.project.LoginActivity.class);
+                        Intent intent=new Intent(getApplicationContext(), com.example.project.game1.class);
                         startActivity(intent);
                         finish();
                  }
