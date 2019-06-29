@@ -116,7 +116,7 @@ public class hello extends AppCompatActivity {
                         Intent intent=new Intent(getApplicationContext(), com.example.project.LoginActivity.class);
                         startActivity(intent);
                         finish();
-                    }
+                 }
 
 
 

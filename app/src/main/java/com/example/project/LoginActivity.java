@@ -135,6 +135,7 @@ public class LoginActivity extends Activity {
 
                             } else {
                                 Toast.makeText(getApplicationContext(), obj.getString("error_msg"), Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), game1.class));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

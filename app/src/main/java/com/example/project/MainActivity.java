@@ -88,8 +88,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         file = new File(this.getFilesDir(), "storag_file4.txt");
-        // file.delete();
-        //wtite_file();
+       //  file.delete();
+     //   wtite_file();
 
         // write_file_image();
         // read_file("storag_image.txt");
@@ -186,7 +186,7 @@ public class MainActivity extends Activity {
                     ArrayList<photItem> broth = readjson_broth(gridview_categ.getAdapter().getItem(position).toString());
                     String temp_parent=broth.get(0).phot_parent;
                    // Toast.makeText(MainActivity.this, temp_parent,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), addphotos.class);
+                    Intent intent = new Intent(getApplicationContext(), game1.class);
                    intent.putExtra("perent", temp_parent);
                     startActivity(intent);
 
