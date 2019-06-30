@@ -12,6 +12,30 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:background="@drawable/shadow">
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:id="@+id/cry"
+            android:src="@drawable/imotioncrry"/>
+        <TextView
+            android:id="@+id/contener"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="@android:dimen/app_icon_size"
+            android:textStyle="normal|bold|italic" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:id="@+id/happy"
+            android:src="@drawable/inimationhap"/>
 
     </LinearLayout>
    <LinearLayout

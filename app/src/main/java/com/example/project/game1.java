@@ -57,7 +57,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
     ArrayList <photItem>arrayanswer;
     String answer=null;
     String audio=null;
-    int counter=0;
+    int counter1=0,counter2=0;
    // GifImageView gifView;
     private android.widget.RelativeLayout.LayoutParams layoutParams;
     String msg;
@@ -153,6 +153,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
     public boolean onDrag(View v, DragEvent event) {
         // Defines a variable to store the action type for the incoming event
         int action = event.getAction();
+
         // Handles each of the expected events
         switch (action) {
 
@@ -169,6 +170,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                 // Invalidate the view to force a redraw in the new tint
                 ((GifDrawable)hap.getDrawable()).stop();
                 ((GifDrawable)cry.getDrawable()).stop();
+
 
                 // Toast.makeText(this,own.toString(),Toast.LENGTH_LONG).show();
                 v.invalidate();
@@ -270,11 +272,13 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                     //Toast.makeText(this, "ok mmmm ", Toast.LENGTH_SHORT).show();
                     if(dragData.equals(answer)) {
                         Toast.makeText(this, "you win", Toast.LENGTH_SHORT).show();
-                        counter++;
-                        coun.setText(String.valueOf(counter));
+                        counter1++;
+                        coun.setText(String.valueOf(counter1));
 
 
                         MediaPlayer pp = Play(yourAudioPath + "ok.mp3");
+                        ((GifDrawable) hap.getDrawable()).setLoopCount(1);
+                        ((GifDrawable) hap.getDrawable()).reset();
                      // ((GifDrawable) hap.getDrawable()).reset();
 
                         int c = 0;
@@ -283,7 +287,12 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                                c++;
                            }
                             edit_fileFinal();
-                            if (counter < 6) {
+                            if (counter1 < 7) {
+                               /* if (v.equals(hand)) {
+                                    hand.setOnClickListener(this);
+                                    Play(audio);
+                                    v.setClickable(true);
+                                }*/
                                 arrayanswer = fill_array_answer();
                                 img1.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(0).phot_img));
                                 img2.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(1).phot_img));
@@ -292,7 +301,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                                 owner.addView(vw);
                                // ((GifDrawable) hap.getDrawable()).stop();
 
-                                Play(audio);
+                               // Play(audio);
                                // ((GifDrawable) hap.getDrawable()).stop();
 
                             }
@@ -336,6 +345,9 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
 
     @Override
     public void onClick(View v) {
+        if (v.equals(hand)) {
+            Play(audio);
+        }
         if(!enter) {
             LinearLayout container = findViewById(R.id.linans1);
             LinearLayout container1 = findViewById(R.id.lingam1);
@@ -344,85 +356,38 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
             if (v.equals(hand)) {
                 Play(audio);
             } else {
-                if (container.getChildCount() != 0) {
-                    // Toast.makeText(this,"hiii"+container.getChildAt(0).toString(),Toast.LENGTH_LONG).show();
-
-                    if (container1.getChildCount() == 0) {
-                        //  String vv = container.getChildAt(0).toString().);
-                        // Toast.makeText(this, "hiii" + vv, Toast.LENGTH_LONG).show();
-                        container.removeView(img3);
-                        container1.addView(img3);
-                        v.setVisibility(View.VISIBLE);
-                    } else if (container2.getChildCount() == 0) {
-                        container.removeView(img2);
-                        container2.addView(img2);
-                        v.setVisibility(View.VISIBLE);
-
-                    } else if (container3.getChildCount() == 0) {
-                        container.removeView(img1);
-                        container3.addView(img1);
-                        v.setVisibility(View.VISIBLE);
-                    }
-                }
-               /* ViewGroup owner = (ViewGroup) v.getParent();
-                owner.removeView(v);
-                container.addView(v);//Add the dragged view
-                v.setVisibility(View.VISIBLE);*/
-
-
-                String vv = v.toString();
-                if (vv.contains(answer)) {
-                    ((GifDrawable) cry.getDrawable()).stop();
-                    ((GifDrawable) hap.getDrawable()).reset();
-                    //   int k= ((GifDrawable)hap.getDrawable()).getDuration();
-                    //    Toast.makeText(this,"time"+String.valueOf(k),Toast.LENGTH_LONG).show();
-                    counter++;
-                    coun.setText(String.valueOf(counter));
-
-                    ViewGroup owner = (ViewGroup) v.getParent();
-                    owner.removeView(v);
-                    container.addView(v);//Add the dragged view
-                    v.setVisibility(View.VISIBLE);
-
+                if (v.toString().contains(answer)) {
+                    counter2++;
+                    coun.setText(String.valueOf(counter2));
                     MediaPlayer pp = Play(yourAudioPath + "ok.mp3");
-                    // ((GifDrawable) hap.getDrawable()).reset();
-
-                    int c = 0;
-
-                    while (pp.isPlaying()) {
-                        c++;
-
-                    }
-                    // arrayanswer = fill_array_answer();
+                    ((GifDrawable) hap.getDrawable()).setLoopCount(1);
+                     ((GifDrawable) hap.getDrawable()).reset();
+                     int cc=0;
+                    ((GifDrawable) cry.getDrawable()).stop();
                     edit_fileFinal();
-                    if (counter < 6) {
-                        container.removeView(v);
-                        owner.addView(v);//Add the dragged view
-                        v.setVisibility(View.VISIBLE);
-                        arrayanswer = fill_array_answer();
+                    if (counter2 < 7) {
+                        arrayanswer=fill_array_answer();
+                        int c=0;
+                     while (pp.isPlaying()) {
+                            c++;
+                        }
                         img1.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(0).phot_img));
                         img2.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(1).phot_img));
                         img3.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(2).phot_img));
-                        //((GifDrawable) hap.getDrawable()).stop();
-
-                        Play(audio);
-                        ((GifDrawable) hap.getDrawable()).stop();
 
                     }
+                }
 
-
-                } else {
+                else
+                {
                     ((GifDrawable) hap.getDrawable()).stop();
                     ((GifDrawable) cry.getDrawable()).reset();
-                    ViewGroup owner = (ViewGroup) v.getParent();
-                    owner.removeView(v);
-                    container.addView(v);//Add the dragged view
-                    v.setVisibility(View.VISIBLE);
+                }
                 }
             }
         }
 
-        }
+
 
         public boolean checLinans(LinearLayout container,View vw)
         {
@@ -512,6 +477,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                     if(!js_qes.contains("where"))
                     {
                         Toast.makeText(this,"enter",Toast.LENGTH_LONG).show();
+                        hand.setBackgroundResource(R.drawable.hand);
                         enter=true;
                         img1.setLongClickable(true);
                         img2.setLongClickable(true);
@@ -519,10 +485,15 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                         img1.setClickable(false);
                         img2.setClickable(false);
                         img3.setClickable(false);
+                     // img1.setOnClickListener(this);
+                     //  img2.setOnClickListener(this);
+                     //   img3.setOnClickListener(this);
 
                     }
                     if(js_qes.contains("where"))
                     {
+                        hand.setBackgroundResource(R.drawable.where);
+                        enter=false;
                         img1.setClickable(true);
                         img2.setClickable(true);
                         img3.setClickable(true);
@@ -532,6 +503,11 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                     }
 
                     String ans=jo_inside.getString("answer");
+                    if(!ans.equals(answer))
+                    {
+                        counter1=0;
+                        counter2=0;
+                    }
                   String  audio1=jo_inside.getString("audio");
                     audio= yourAudioPath + audio1;
                     JSONArray enter_array = jo_inside.getJSONArray("choice");
