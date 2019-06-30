@@ -1,7 +1,7 @@
 {
   "game.json":
 [
-  {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
+ /* {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
   {"name1":"chair","image1":"chair.jpg"},{"name1":"babi","image1":"babi.jpg"},{"name1":"balon","image1":"balon.jpg"}]},
   {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
     {"name1":"toiti","image1":"toiti.jpg"},{"name1":"not","image1":"not.jpg"},{"name1":"chair","image1":"chair2.jpg"}]},
@@ -13,19 +13,19 @@
     {"name1":"table2","image1":"table2.jpg"},{"name1":"chair","image1":"chair4.jpg"},{"name1":"sofa2","image1":"sofa2.jpg"}]},
   {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
     {"name1":"chair","image1":"chair5.jpg"},{"name1":"sofa3","image1":"sofa3.jpg"},{"name1":"table3","image1":"table3.jpg"}]}
-  //where/*
- /* {"qestion":"whereChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
+  //where/**/
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
     {"name1":"chair","image1":"chair.jpg"},{"name1":"babi","image1":"babi.jpg"},{"name1":"balon","image1":"balon.jpg"}]},
-  {"qestion":"whereChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
     {"name1":"toiti","image1":"toiti.jpg"},{"name1":"not","image1":"not.jpg"},{"name1":"chair","image1":"chair2.jpg"}]},
-  {"qestion":"whereChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
     {"name1":"mrbin","image1":"mrbin.jpg"},{"name1":"chair","image1":"chair2.jpg"},{"name1":"bag","image1":"bag.jpg"}]},
-  {"qestion":"whereChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
     {"name1":"sofa1","image1":"sofa1.jpg"},{"name1":"table1","image1":"table1.jpg"},{"name1":"chair","image1":"chair3.jpg"}]},
-  {"qestion":"whereChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
     {"name1":"table2","image1":"table2.jpg"},{"name1":"chair","image1":"chair4.jpg"},{"name1":"sofa2","image1":"sofa2.jpg"}]},
-  {"qestion":"whereChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
-    {"name1":"chair","image1":"chair5.jpg"},{"name1":"sofa3","image1":"sofa3.jpg"},{"name1":"table3","image1":"table3.jpg"}]}*/
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
+    {"name1":"chair","image1":"chair5.jpg"},{"name1":"sofa3","image1":"sofa3.jpg"},{"name1":"table3","image1":"table3.jpg"}]}
 
 
 

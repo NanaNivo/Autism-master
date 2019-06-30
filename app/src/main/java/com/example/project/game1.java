@@ -11,6 +11,8 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Build;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,6 +40,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Timer;
 
 import pl.droidsonroids.gif.GifDrawable;
 
@@ -91,6 +94,13 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
         img3.setTag("img3");
         img3.setOnLongClickListener(this);
         img3.setOnClickListener(this);
+        findViewById(R.id.lingam1).setOnDragListener((View.OnDragListener) this);
+        findViewById(R.id.lingam2).setOnDragListener(this);
+        findViewById(R.id.lingam3).setOnDragListener(this);
+        // findViewById(R.id.space).setOnDragListener(this);
+        findViewById(R.id.linans1).setOnDragListener(this);
+        findViewById(R.id.linans2).setOnDragListener(this);
+        findViewById(R.id.linans3).setOnDragListener(this);
         arrayanswer=fill_array_answer();
         img1.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(0).phot_img));
         img2.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(1).phot_img));
@@ -108,13 +118,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
       //  array_answer=fill_array_answer("givChair");
 
         //Set Drag Event Listeners for defined layouts
-        findViewById(R.id.lingam1).setOnDragListener((View.OnDragListener) this);
-        findViewById(R.id.lingam2).setOnDragListener(this);
-        findViewById(R.id.lingam3).setOnDragListener(this);
-       // findViewById(R.id.space).setOnDragListener(this);
-       findViewById(R.id.linans1).setOnDragListener(this);
-        findViewById(R.id.linans2).setOnDragListener(this);
-        findViewById(R.id.linans3).setOnDragListener(this);
+
 
 
 
@@ -124,6 +128,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
 
     @Override
     public boolean onLongClick(View v) {
+        v.setClickable(false);
         // Create a new ClipData.Item from the ImageView object's tag
         ClipData.Item item = new ClipData.Item((CharSequence) v.getTag());
         // Create a new ClipData using the tag as a label, the plain text MIME type, and
@@ -283,8 +288,8 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                                 img1.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(0).phot_img));
                                 img2.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(1).phot_img));
                                 img3.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(2).phot_img));
-                               // container.removeView(vw);
-                              //  owner.addView(vw);
+                                container.removeView(vw);
+                                owner.addView(vw);
                                // ((GifDrawable) hap.getDrawable()).stop();
 
                                 Play(audio);
@@ -331,66 +336,69 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
 
     @Override
     public void onClick(View v) {
-        LinearLayout container = findViewById(R.id.linans1);
-        LinearLayout container1 = findViewById(R.id.lingam1);
-        LinearLayout container2 = findViewById(R.id.lingam2);
-        LinearLayout container3 = findViewById(R.id.lingam3);
-        if (v.equals(hand)) {
-            Play(audio);
-        } else {
-            if (container.getChildCount() !=0) {
-                // Toast.makeText(this,"hiii"+container.getChildAt(0).toString(),Toast.LENGTH_LONG).show();
+        if(!enter) {
+            LinearLayout container = findViewById(R.id.linans1);
+            LinearLayout container1 = findViewById(R.id.lingam1);
+            LinearLayout container2 = findViewById(R.id.lingam2);
+            LinearLayout container3 = findViewById(R.id.lingam3);
+            if (v.equals(hand)) {
+                Play(audio);
+            } else {
+                if (container.getChildCount() != 0) {
+                    // Toast.makeText(this,"hiii"+container.getChildAt(0).toString(),Toast.LENGTH_LONG).show();
 
-                if (container1.getChildCount() == 0) {
-                  //  String vv = container.getChildAt(0).toString().);
-                   // Toast.makeText(this, "hiii" + vv, Toast.LENGTH_LONG).show();
-                    container.removeView(img3);
-                    container1.addView(img3);
-                    v.setVisibility(View.VISIBLE);
-                } else if (container2.getChildCount() == 0) {
-                    container.removeView(img2);
-                    container2.addView(img2);
-                    v.setVisibility(View.VISIBLE);
+                    if (container1.getChildCount() == 0) {
+                        //  String vv = container.getChildAt(0).toString().);
+                        // Toast.makeText(this, "hiii" + vv, Toast.LENGTH_LONG).show();
+                        container.removeView(img3);
+                        container1.addView(img3);
+                        v.setVisibility(View.VISIBLE);
+                    } else if (container2.getChildCount() == 0) {
+                        container.removeView(img2);
+                        container2.addView(img2);
+                        v.setVisibility(View.VISIBLE);
 
-                } else if (container3.getChildCount() == 0) {
-                    container.removeView(img1);
-                    container3.addView(img1);
-                    v.setVisibility(View.VISIBLE);
+                    } else if (container3.getChildCount() == 0) {
+                        container.removeView(img1);
+                        container3.addView(img1);
+                        v.setVisibility(View.VISIBLE);
+                    }
                 }
-                ViewGroup owner = (ViewGroup) v.getParent();
+               /* ViewGroup owner = (ViewGroup) v.getParent();
                 owner.removeView(v);
                 container.addView(v);//Add the dragged view
-                v.setVisibility(View.VISIBLE);
+                v.setVisibility(View.VISIBLE);*/
 
 
-                }
-            else {
-                    // Toast.makeText(this,"hiii"+v.toString(),Toast.LENGTH_LONG).show();
+                String vv = v.toString();
+                if (vv.contains(answer)) {
+                    ((GifDrawable) cry.getDrawable()).stop();
+                    ((GifDrawable) hap.getDrawable()).reset();
+                    //   int k= ((GifDrawable)hap.getDrawable()).getDuration();
+                    //    Toast.makeText(this,"time"+String.valueOf(k),Toast.LENGTH_LONG).show();
+                    counter++;
+                    coun.setText(String.valueOf(counter));
+
                     ViewGroup owner = (ViewGroup) v.getParent();
                     owner.removeView(v);
                     container.addView(v);//Add the dragged view
                     v.setVisibility(View.VISIBLE);
-                }
-                String vv=v.toString();
-                if(vv.contains(answer))
-                {
-                    ((GifDrawable)cry.getDrawable()).stop();
-                    ((GifDrawable)hap.getDrawable()).reset();
-                    counter++;
-                    coun.setText(String.valueOf(counter));
 
                     MediaPlayer pp = Play(yourAudioPath + "ok.mp3");
-                    ((GifDrawable) hap.getDrawable()).reset();
+                    // ((GifDrawable) hap.getDrawable()).reset();
 
                     int c = 0;
-                    while(pp.isPlaying())
-                    {
+
+                    while (pp.isPlaying()) {
                         c++;
+
                     }
-
+                    // arrayanswer = fill_array_answer();
                     edit_fileFinal();
-
                     if (counter < 6) {
+                        container.removeView(v);
+                        owner.addView(v);//Add the dragged view
+                        v.setVisibility(View.VISIBLE);
                         arrayanswer = fill_array_answer();
                         img1.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(0).phot_img));
                         img2.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(1).phot_img));
@@ -398,18 +406,21 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                         //((GifDrawable) hap.getDrawable()).stop();
 
                         Play(audio);
-                        // ((GifDrawable) hap.getDrawable()).stop();
+                        ((GifDrawable) hap.getDrawable()).stop();
 
                     }
 
 
-                }
-                else
-                {
-                    ((GifDrawable)hap.getDrawable()).stop();
-                    ((GifDrawable)cry.getDrawable()).reset();
+                } else {
+                    ((GifDrawable) hap.getDrawable()).stop();
+                    ((GifDrawable) cry.getDrawable()).reset();
+                    ViewGroup owner = (ViewGroup) v.getParent();
+                    owner.removeView(v);
+                    container.addView(v);//Add the dragged view
+                    v.setVisibility(View.VISIBLE);
                 }
             }
+        }
 
         }
 
@@ -484,6 +495,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
         return json;
     }
    // public ArrayList<photItem> fill_array_answer(String qestion,String ans)
+    boolean enter=false;
    public ArrayList<photItem> fill_array_answer()
     {
         ArrayList <photItem> temp=new ArrayList();
@@ -497,6 +509,18 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                 String js_deter=jo_inside.getString("deterqwes");
                 if (js_deter.equals("false")) {
                     String js_qes = jo_inside.getString("qestion");
+                    if(!js_qes.contains("where"))
+                    {
+                        Toast.makeText(this,"enter",Toast.LENGTH_LONG).show();
+                        enter=true;
+                        img1.setLongClickable(true);
+                        img2.setLongClickable(true);
+                        img3.setLongClickable(true);
+                        img1.setClickable(false);
+                        img2.setClickable(false);
+                        img3.setClickable(false);
+
+                    }
                     if(js_qes.contains("where"))
                     {
                         img1.setClickable(true);
@@ -506,15 +530,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                         img2.setLongClickable(false);
                         img3.setLongClickable(false);
                     }
-                    else
-                    {
-                        img1.setClickable(false);
-                        img2.setClickable(false);
-                        img3.setClickable(false);
-                        img1.setLongClickable(true);
-                        img2.setLongClickable(true);
-                        img3.setLongClickable(true);
-                    }
+
                     String ans=jo_inside.getString("answer");
                   String  audio1=jo_inside.getString("audio");
                     audio= yourAudioPath + audio1;
@@ -625,6 +641,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
 
         return ddd;
     }
+
     public MediaPlayer Play(String pathName) {
 
         MediaPlayer player = new MediaPlayer();
@@ -635,6 +652,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
              {
                   ((GifDrawable) hap.getDrawable()).reset();
             }*/
+
             player.setDataSource(pathName);
             player.prepare();
 
@@ -646,5 +664,28 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
         player.start();
         return player;
     }
+    long timeInMilliseconds = 0L;
+    long timeSwapBuff = 0L;
+    long updatedTime = 0L;
+    private long startHTime = 0L;
+    private Handler customHandler = new Handler();
+    private Runnable updateTimerThread = new Runnable() {
+
+        public void run() {
+
+            timeInMilliseconds = SystemClock.uptimeMillis() - startHTime;
+
+            updatedTime = timeSwapBuff + timeInMilliseconds;
+
+            int secs = (int) (updatedTime / 1000);
+            int mins = secs / 60;
+            secs = secs % 60;
+          //  if (timerTextView != null)
+             //   timerTextView.setText("" + String.format("%02d", mins) + ":"
+                //        + String.format("%02d", secs));
+            customHandler.postDelayed(this, 0);
+        }
+
+    };
 
 }
