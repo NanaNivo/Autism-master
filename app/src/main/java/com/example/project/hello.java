@@ -103,17 +103,12 @@ public class hello extends AppCompatActivity {
                     sleep(1200);
 
                     if (SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()) {
+
+                        startActivity(new Intent(getApplicationContext(), swap_key.class));
                         finish();
-                        if(SharedPrefManager.getInstance(getApplicationContext()).getUser_level() == 1){
-
-                            startActivity(new Intent(getApplicationContext(), level1.class));
-                        }else{
-
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        }
-
                     }else {
-                        Intent intent=new Intent(getApplicationContext(), com.example.project.game1.class);
+
+                        Intent intent=new Intent(getApplicationContext(), com.example.project.LoginActivity.class);
                         startActivity(intent);
                         finish();
                  }

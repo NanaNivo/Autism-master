@@ -35,6 +35,9 @@
         <activity
             android:name=".addphotos"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".swap_key"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".hello"

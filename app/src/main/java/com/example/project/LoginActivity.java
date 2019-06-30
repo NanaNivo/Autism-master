@@ -51,11 +51,8 @@ public class LoginActivity extends Activity {
 
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             finish();
-            if(SharedPrefManager.getInstance(this).getUser_level() == 1){
-                startActivity(new Intent(this, level1.class));
-            }else{
-                startActivity(new Intent(this, MainActivity.class));
-            }
+
+                startActivity(new Intent(this, swap_key.class));
 
         }
 
@@ -121,21 +118,22 @@ public class LoginActivity extends Activity {
                               //  Toast.makeText(getApplicationContext(), obj.getString("user_id"), Toast.LENGTH_SHORT).show();
 
                                 SharedPrefManager.getInstance(getApplicationContext()).userLogin(uid,level);
-
+/*
                                 Toast.makeText(getApplicationContext(),
                                         uid + " "+level , Toast.LENGTH_LONG).show();
 
-
+*/
+                                startActivity(new Intent(getApplicationContext(), swap_key.class));
                                 finish();
-                                if(SharedPrefManager.getInstance(getApplicationContext()).getUser_level() == 1){
+                               /* if(SharedPrefManager.getInstance(getApplicationContext()).getUser_level() == 1){
                                     startActivity(new Intent(getApplicationContext(), level1.class));
                                 }else{
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                }
+                                }*/
 
                             } else {
-                                Toast.makeText(getApplicationContext(), obj.getString("error_msg"), Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), game1.class));
+                                Toast.makeText(getApplicationContext(), "UserName Or Password Error!", Toast.LENGTH_SHORT).show();
+                                //startActivity(new Intent(getApplicationContext(), game1.class));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
