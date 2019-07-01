@@ -365,7 +365,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                      int cc=0;
                     ((GifDrawable) cry.getDrawable()).stop();
                     edit_fileFinal();
-                    if (counter2 < 7) {
+                    if (counter2 < 7&& arrayanswer!=null) {
                         arrayanswer=fill_array_answer();
                         int c=0;
                      while (pp.isPlaying()) {
@@ -503,10 +503,14 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                     }
 
                     String ans=jo_inside.getString("answer");
-                    if(!ans.equals(answer))
-                    {
-                        counter1=0;
-                        counter2=0;
+                    if(i!=0) {
+                        JSONObject jo_insideprev = m_jArry.getJSONObject(i - 1);
+
+                        String ansprev = jo_insideprev.getString("answer");
+                        if (!ans.equals(ansprev)) {
+                            counter1 = 0;
+                            counter2 = 0;
+                        }
                     }
                   String  audio1=jo_inside.getString("audio");
                     audio= yourAudioPath + audio1;

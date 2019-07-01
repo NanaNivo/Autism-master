@@ -1,31 +1,133 @@
 {
   "game.json":
 [
-  {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
+  //level 1-1
+ /* {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
   {"name1":"chair","image1":"chair.jpg"},{"name1":"babi","image1":"babi.jpg"},{"name1":"balon","image1":"balon.jpg"}]},
   {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
     {"name1":"toiti","image1":"toiti.jpg"},{"name1":"not","image1":"not.jpg"},{"name1":"chair","image1":"chair2.jpg"}]},
   {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
     {"name1":"mrbin","image1":"mrbin.jpg"},{"name1":"chair","image1":"chair2.jpg"},{"name1":"bag","image1":"bag.jpg"}]},
-    {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
     {"name1":"chair","image1":"chair.jpg"},{"name1":"babi","image1":"babi.jpg"},{"name1":"balon","image1":"balon.jpg"}]},
-  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
     {"name1":"toiti","image1":"toiti.jpg"},{"name1":"not","image1":"not.jpg"},{"name1":"chair","image1":"chair2.jpg"}]},
-  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
     {"name1":"mrbin","image1":"mrbin.jpg"},{"name1":"chair","image1":"chair2.jpg"},{"name1":"bag","image1":"bag.jpg"}]},
+
+  //level 1-2
   {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
     {"name1":"sofa1","image1":"sofa1.jpg"},{"name1":"table1","image1":"table1.jpg"},{"name1":"chair","image1":"chair3.jpg"}]},
   {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
     {"name1":"table2","image1":"table2.jpg"},{"name1":"chair","image1":"chair4.jpg"},{"name1":"sofa2","image1":"sofa2.jpg"}]},
   {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
     {"name1":"chair","image1":"chair5.jpg"},{"name1":"sofa3","image1":"sofa3.jpg"},{"name1":"table3","image1":"table3.jpg"}]},
-  //where/**/
-  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
     {"name1":"sofa1","image1":"sofa1.jpg"},{"name1":"table1","image1":"table1.jpg"},{"name1":"chair","image1":"chair3.jpg"}]},
-  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
     {"name1":"table2","image1":"table2.jpg"},{"name1":"chair","image1":"chair4.jpg"},{"name1":"sofa2","image1":"sofa2.jpg"}]},
-  {"qestion":"whereChair","answer":"chair","audio":"wherchair.mp3","deterqwes":"false","choice":[
-    {"name1":"chair","image1":"chair5.jpg"},{"name1":"sofa3","image1":"sofa3.jpg"},{"name1":"table3","image1":"table3.jpg"}]}
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
+    {"name1":"chair","image1":"chair5.jpg"},{"name1":"sofa3","image1":"sofa3.jpg"},{"name1":"table3","image1":"table3.jpg"}]},*/
+
+  //level 2-1
+  /*{"qestion":"givtv","answer":"tv","audio":"givtv.mp3","deterqwes":"false","choice":[
+    {"name1":"tv","image1":"tv12.jpg"},{"name1":"car","image1":"car.jpg"},{"name1":"bed","image1":"bed.jpg"}]},
+  {"qestion":"givtv","answer":"tv","audio":"givtv.mp3","deterqwes":"false","choice":[
+    {"name1":"pen","image1":"pen.jpg"},{"name1":"bruch","image1":"bruch.jpg"}, {"name1":"tv","image1":"tv12.jpg"}]},
+  {"qestion":"givtv","answer":"tv","audio":"givtv.mp3","deterqwes":"false","choice":[
+    {"name1":"ruler","image1":"ruler.jpg"},{"name1":"tv","image1":"tv34.jpg"},{"name1":"flower","image1":"flower.jpg"}]},
+  {"qestion":"wheretv","answer":"tv","audio":"wheretv.mp3","deterqwes":"false","choice":[
+    {"name1":"tv","image1":"tv12.jpg"},{"name1":"car","image1":"car.jpg"},{"name1":"bed","image1":"bed.jpg"}]},
+  {"qestion":"wheretv","answer":"tv","audio":"wheretv.mp3","deterqwes":"false","choice":[
+    {"name1":"pen","image1":"pen.jpg"},{"name1":"bruch","image1":"bruch.jpg"}, {"name1":"tv","image1":"tv12.jpg"}]},
+  {"qestion":"wheretv","answer":"tv","audio":"wheretv.mp3","deterqwes":"false","choice":[
+    {"name1":"ruler","image1":"ruler.jpg"},{"name1":"tv","image1":"tv34.jpg"},{"name1":"flower","image1":"flower.jpg"}]},
+
+  //level2-2
+  {"qestion":"givtv","answer":"tv","audio":"givtv.mp3","deterqwes":"false","choice":[
+    {"name1":"laptop","image1":"laptop.jpg"},{"name1":"tv","image1":"tv34.jpg"},{"name1":"ipad","image1":"ipad.jpg"}]},
+  {"qestion":"givtv","answer":"tv","audio":"givtv.mp3","deterqwes":"false","choice":[
+    {"name1":"tv","image1":"tv5.jpg"},{"name1":"ipad5","image1":"ipad5.jpg"},{"name1":"laptop5","image1":"laptop5.jpg"}]},
+  {"qestion":"givtv","answer":"tv","audio":"givtv.mp3","deterqwes":"false","choice":[
+    {"name1":"ipad6","image1":"ipad6.jpg"}, {"name1":"laptop6","image1":"laptop6.jpg"},{"name1":"tv","image1":"tv6.jpg"}]},
+  {"qestion":"wheretv","answer":"tv","audio":"wheretv.mp3","deterqwes":"false","choice":[
+    {"name1":"laptop","image1":"laptop.jpg"},{"name1":"tv","image1":"tv34.jpg"},{"name1":"ipad","image1":"ipad.jpg"}]},
+  {"qestion":"wheretv","answer":"tv","audio":"wheretv.mp3","deterqwes":"false","choice":[
+    {"name1":"tv","image1":"tv5.jpg"},{"name1":"ipad5","image1":"ipad5.jpg"},{"name1":"laptop5","image1":"laptop5.jpg"}]},
+  {"qestion":"wheretv","answer":"tv","audio":"wheretv.mp3","deterqwes":"false","choice":[
+    {"name1":"ipad6","image1":"ipad6.jpg"}, {"name1":"laptop6","image1":"laptop6.jpg"},{"name1":"tv","image1":"tv6.jpg"}]},
+
+  //level3-1
+  {"qestion":"givapple","answer":"apple","audio":"givapple.mp3","deterqwes":"false","choice":[
+    {"name1":"book","image1":"book.jpg"},{"name1":"apple","image1":"apple12.jpg"},{"name1":"bag","image1":"bag.jpg"}]},
+  {"qestion":"givapple","answer":"apple","audio":"givapple.mp3","deterqwes":"false","choice":[
+    {"name1":"apple","image1":"apple12.jpg"},{"name1":"banana","image1":"banana.jpg"},{"name1":"tree","image1":"tree.jpg"}]},
+  {"qestion":"givapple","answer":"apple","audio":"givapple.mp3","deterqwes":"false","choice":[
+    {"name1":"cookies","image1":"cookies.jpg"},{"name1":"sun","image1":"sun.jpg"},{"name1":"apple","image1":"apple34.jpg"}]},
+  {"qestion":"whereapple","answer":"apple","audio":"whereapple.mp3","deterqwes":"false","choice":[
+    {"name1":"book","image1":"book.jpg"},{"name1":"apple","image1":"apple12.jpg"},{"name1":"bag","image1":"bag.jpg"}]},
+  {"qestion":"whereapple","answer":"apple","audio":"whereapple.mp3","deterqwes":"false","choice":[
+    {"name1":"apple","image1":"apple12.jpg"},{"name1":"banana","image1":"banana.jpg"},{"name1":"tree","image1":"tree.jpg"}]},
+  {"qestion":"whereapple","answer":"apple","audio":"whereapple.mp3","deterqwes":"false","choice":[
+    {"name1":"cookies","image1":"cookies.jpg"},{"name1":"sun","image1":"sun.jpg"},{"name1":"apple","image1":"apple34.jpg"}]},
+
+  //level3-2
+  {"qestion":"givapple","answer":"apple","audio":"givapple.mp3","deterqwes":"false","choice":[
+    {"name1":"apple","image1":"apple34.jpg"},{"name1":"ball","image1":"ball.jpg"},{"name1":"ballon","image1":"ballon.jpg"}]},
+  {"qestion":"givapple","answer":"apple","audio":"givapple.mp3","deterqwes":"false","choice":[
+    {"name1":"ballons","image1":"ballons.jpg"},{"name1":"balls","image1":"balls.jpg"},{"name1":"apple","image1":"apple5.jpg"}]},
+  {"qestion":"givapple","answer":"apple","audio":"givapple.mp3","deterqwes":"false","choice":[
+    {"name1":"pomegranate","image1":"pomegranate.jpg"} ,{"name1":"apple","image1":"apple6.jpg"},{"name1":"Fellow","image1":"Fellow.jpg"}]},
+  {"qestion":"whereapple","answer":"apple","audio":"whereapple.mp3","deterqwes":"false","choice":[
+    {"name1":"apple","image1":"apple34.jpg"},{"name1":"ball","image1":"ball.jpg"},{"name1":"ballon","image1":"ballon.jpg"}]},
+  {"qestion":"whereapple","answer":"apple","audio":"whereapple.mp3","deterqwes":"false","choice":[
+    {"name1":"ballons","image1":"ballons.jpg"},{"name1":"balls","image1":"balls.jpg"},{"name1":"apple","image1":"apple5.jpg"}]},
+  {"qestion":"whereapple","answer":"apple","audio":"whereapple.mp3","deterqwes":"false","choice":[
+    {"name1":"pomegranate","image1":"pomegranate.jpg"} ,{"name1":"apple","image1":"apple6.jpg"},{"name1":"Fellow","image1":"Fellow.jpg"}]},
+
+  //level4-1
+  {"qestion":"givorange","answer":"orange","audio":"givorange.mp3","deterqwes":"false","choice":[
+    {"name1":"orange","image1":"orange12.jpg"},{"name1":"Freeze","image1":"Freeze.jpg"},{"name1":"fish","image1":"fish.jpg"}]},
+  {"qestion":"givorange","answer":"orange","audio":"givorange.mp3","deterqwes":"false","choice":[
+    {"name1":"watermelon","image1":"watermelon.jpg"} ,{"name1":"orange","image1":"orange12.jpg"},{"name1":"nuts","image1":"nuts.jpg"}]},
+  {"qestion":"givorange","answer":"orange","audio":"givorange.mp3","deterqwes":"false","choice":[
+    {"name1":"food","image1":"food.jpg"} ,{"name1":"orange","image1":"orange34.jpg"},{"name1":"pizza","image1":"pizza.jpg"}]},
+  {"qestion":"whereorange","answer":"orange","audio":"whereorange.mp3","deterqwes":"false","choice":[
+    {"name1":"orange","image1":"orange12.jpg"},{"name1":"Freeze","image1":"Freeze.jpg"},{"name1":"fish","image1":"fish.jpg"}]},
+  {"qestion":"whereorange","answer":"orange","audio":"whereorange.mp3","deterqwes":"false","choice":[
+    {"name1":"watermelon","image1":"watermelon.jpg"} ,{"name1":"orange","image1":"orange12.jpg"},{"name1":"nuts","image1":"nuts.jpg"}]},
+  {"qestion":"whereorange","answer":"orange","audio":"whereorange.mp3","deterqwes":"false","choice":[
+    {"name1":"food","image1":"food.jpg"} ,{"name1":"orange","image1":"orange34.jpg"},{"name1":"pizza","image1":"pizza.jpg"}]},*/
+
+  //level4-2
+  {"qestion":"givorange","answer":"orange","audio":"givorange.mp3","deterqwes":"false","choice":[
+    {"name1":"onion","image1":"onion.jpg"} ,{"name1":"lemon","image1":"lemon.jpg"},{"name1":"orange","image1":"orange34.jpg"}]},
+  {"qestion":"givorange","answer":"orange","audio":"givorange.mp3","deterqwes":"false","choice":[
+    {"name1":"orange","image1":"orange5.jpg"},{"name1":"ballon5","image1":"ballon5.jpg"},{"name1":"ball5","image1":"ball5.jpg"}]},
+  {"qestion":"givorange","answer":"orange","audio":"givorange.mp3","deterqwes":"false","choice":[
+    {"name1":"ballons6","image1":"ballons6.jpg"},{"name1":"orange","image1":"orange6.jpg"},{"name1":"lemons","image1":"lemons.jpg"}]},
+  {"qestion":"whereorange","answer":"orange","audio":"whereorange.mp3","deterqwes":"false","choice":[
+    {"name1":"onion","image1":"onion.jpg"} ,{"name1":"lemon","image1":"lemon.jpg"},{"name1":"orange","image1":"orange34.jpg"}]},
+  {"qestion":"whereorange","answer":"orange","audio":"whereorange.mp3","deterqwes":"false","choice":[
+    {"name1":"orange","image1":"orange5.jpg"},{"name1":"ballon5","image1":"ballon5.jpg"},{"name1":"ball5","image1":"ball5.jpg"}]},
+  {"qestion":"whereorange","answer":"orange","audio":"whereorange.mp3","deterqwes":"false","choice":[
+    {"name1":"ballons6","image1":"ballons6.jpg"},{"name1":"orange","image1":"orange6.jpg"},{"name1":"lemons","image1":"lemons.jpg"}]}
+
+
+
+  //where/*
+ /* {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
+    {"name1":"chair","image1":"chair.jpg"},{"name1":"babi","image1":"babi.jpg"},{"name1":"balon","image1":"balon.jpg"}]},
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
+    {"name1":"toiti","image1":"toiti.jpg"},{"name1":"not","image1":"not.jpg"},{"name1":"chair","image1":"chair2.jpg"}]},
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
+    {"name1":"mrbin","image1":"mrbin.jpg"},{"name1":"chair","image1":"chair2.jpg"},{"name1":"bag","image1":"bag.jpg"}]},
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
+    {"name1":"sofa1","image1":"sofa1.jpg"},{"name1":"table1","image1":"table1.jpg"},{"name1":"chair","image1":"chair3.jpg"}]},
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
+    {"name1":"table2","image1":"table2.jpg"},{"name1":"chair","image1":"chair4.jpg"},{"name1":"sofa2","image1":"sofa2.jpg"}]},
+  {"qestion":"whereChair","answer":"chair","audio":"wherchair.amr","deterqwes":"false","choice":[
+    {"name1":"chair","image1":"chair5.jpg"},{"name1":"sofa3","image1":"sofa3.jpg"},{"name1":"table3","image1":"table3.jpg"}]}*/
 
 
 
