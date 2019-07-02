@@ -186,7 +186,7 @@ public class MainActivity extends Activity {
                     ArrayList<photItem> broth = readjson_broth(gridview_categ.getAdapter().getItem(position).toString());
                     String temp_parent=broth.get(0).phot_parent;
                    // Toast.makeText(MainActivity.this, temp_parent,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), game1.class);
+                    Intent intent = new Intent(getApplicationContext(), addphotos.class);
                    intent.putExtra("perent", temp_parent);
                     startActivity(intent);
 

@@ -89,8 +89,14 @@ public class addphotos extends AppCompatActivity {
         });
         cam.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
+                int namsize=text_phot.getText().length();
+                if (namsize < 5) {
+                    Toast.makeText(addphotos.this, "please First Enter the name First", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent openCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(openCamera, 2);
 
-
+                }
             }
         });
 
@@ -143,23 +149,6 @@ public class addphotos extends AppCompatActivity {
                 }
             }
         });
-   /*    record_voic.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-
-                if(temp==1) {
-                    mediaRecorder.stop();
-                    timeSwapBuff += timeInMilliseconds;
-                    customHandler.removeCallbacks(updateTimerThread);
-                    temp=0;
-                }
-                return false;
-            }
-
-
-        });*/
-
-
         stor_imag.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
                 // char cc = text_phot.getText().charAt(0);
@@ -223,36 +212,25 @@ public class addphotos extends AppCompatActivity {
         }
         if(requestCode == 2 && resultCode == RESULT_OK && null != data)
         {
+            Uri selectedImage = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-         /* Uri savedUri = data.getData();
-         savedUri.getPath();
-            String[] filePathColumn = {MediaStore.Audio.Media.DATA};
-
-            Cursor cursor = getContentResolver().query(savedUri,
+            Cursor cursor = getContentResolver().query(selectedImage,
                     filePathColumn, null, null, null);
             cursor.moveToFirst();
 
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-           String voicePath = cursor.getString(columnIndex);
-          cursor.close();*/
+            String picturePath = cursor.getString(columnIndex);
+            cursor.close();
+            //  Toast.makeText(addphotos.this, picturePath,Toast.LENGTH_LONG).show();
 
+            addimage.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+            image_loaded =saveToInternalStorage(BitmapFactory.decodeFile(picturePath));
 
+            }
 
-
-
-            //   voice_loaded= saveToInternalStorageVoice(voicePath);
-
-
-
-
-            //    Toast.makeText(addphotos.this, mediaRecorder.toString(),Toast.LENGTH_LONG).show();
-            //  voice_loaded =saveToInternalStorage(BitmapFactory.decodeFile(voicePath));
-
-            // voice_loaded= voice_loaded+".mp3";
-
-            Toast.makeText(addphotos.this, voice_loaded,Toast.LENGTH_LONG).show();
         }
-    }
+
     private String saveToInternalStorage(Bitmap bitmapImage){
         // Create imageDir
         File mypath=new File(yourFilePath,pp);
