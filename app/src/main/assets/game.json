@@ -3,7 +3,7 @@
   "game.json":
   [
     //level 1-1
-    {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
+ /* {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
       {"name1":"chair","image1":"chair.jpg"},{"name1":"babi","image1":"babi.jpg"},{"name1":"balon","image1":"balon.jpg"}]},
     {"qestion":"givChair","answer":"chair","audio":"givchair.mp3","deterqwes":"false","choice":[
       {"name1":"toiti","image1":"toiti.jpg"},{"name1":"not","image1":"not.jpg"},{"name1":"chair","image1":"chair2.jpg"}]},
@@ -211,12 +211,12 @@
       {"name1":"banana","image1":"banana12.jpg"},{"name1":"str","image1":"Freeze.jpg"},{"name1":"bread","image1":"bread.jpg"}]},
     {"qestion":"givstr","answer":"str","audio":"givstr.mp3","deterqwes":"false","choice":[
       {"name1":"str","image1":"str34.png"},{"name1":"babi","image1":"babi.jpg"},{"name1":"ballons6","image1":"ballons6.jpg"}]},
-    {"qestion":"wherestr","answer":"str","audio":"wherestr.mp3","deterqwes":"false","choice":[
+    {"qestion":"wherestr","answer":"str","audio":"wherestr.amr","deterqwes":"false","choice":[
       {"name1":"str","image1":"Freeze.jpg"},{"name1":"mrbin","image1":"mrbin.jpg"},{"name1":"spongebob","image1":"spongebob.jpg"}]},
-    {"qestion":"wherestr","answer":"str","audio":"wherestr.mp3","deterqwes":"false","choice":[
+    {"qestion":"wherestr","answer":"str","audio":"wherestr.amr","deterqwes":"false","choice":[
       {"name1":"banana","image1":"banana12.jpg"},{"name1":"str","image1":"Freeze.jpg"},{"name1":"bread","image1":"bread.jpg"}]},
-    {"qestion":"wherestr","answer":"str","audio":"wherestr.mp3","deterqwes":"false","choice":[
-      {"name1":"str","image1":"str34.png"},{"name1":"babi","image1":"babi.jpg"},{"name1":"ballons6","image1":"ballons6.jpg"}]},
+    {"qestion":"wherestr","answer":"str","audio":"wherestr.amr","deterqwes":"false","choice":[
+      {"name1":"str","image1":"str34.png"},{"name1":"babi","image1":"babi.jpg"},{"name1":"ballons6","image1":"ballons6.jpg"}]},*/
 
 //level8-2
     {"qestion":"givstr","answer":"str","audio":"givstr.mp3","deterqwes":"false","choice":[
@@ -225,14 +225,16 @@
       {"name1":"fell","image1":"fell2.jpg"} ,{"name1":"apple0","image1":"apple0.jpg"},{"name1":"str","image1":"str5.jpg"}]},
     {"qestion":"givstr","answer":"str","audio":"givstr.mp3","deterqwes":"false","choice":[
       {"name1":"ballon","image1":"redballon.jpg"} ,{"name1":"str","image1":"str6.jpg"},{"name1":"balls","image1":"balls6.jpg"}]},
-    {"qestion":"wherestr","answer":"str","audio":"wherestr.mp3","deterqwes":"false","choice":[
+    {"qestion":"wherestr","answer":"str","audio":"wherestr.amr","deterqwes":"false","choice":[
       {"name1":"str","image1":"str34.png"},{"name1":"orange34","image1":"orange34.jpg"},{"name1":"pomegranate","image1":"pomegranate.jpg"}]},
-    {"qestion":"wherestr","answer":"str","audio":"wherestr.mp3","deterqwes":"false","choice":[
+    {"qestion":"wherestr","answer":"str","audio":"wherestr.amr","deterqwes":"false","choice":[
       {"name1":"fell","image1":"fell2.jpg"} ,{"name1":"apple0","image1":"apple0.jpg"},{"name1":"str","image1":"str5.jpg"}]},
-    {"qestion":"wherestr","answer":"str","audio":"wherestr.mp3","deterqwes":"false","choice":[
+    {"qestion":"wherestr","answer":"str","audio":"wherestr.amr","deterqwes":"false","choice":[
       {"name1":"ballon","image1":"redballon.jpg"} ,{"name1":"str","image1":"str6.jpg"},{"name1":"balls","image1":"balls6.jpg"}]},
-    {"qestion":"wherestr","answer":"str","audio":"wherestr.mp3","deterqwes":"false","choice":[
+
+    {"qestion":"wherestr","answer":"str","audio":"wherestr.amr","deterqwes":"false","choice":[
       {"name1":"ballon","image1":"redballon.jpg"} ,{"name1":"str","image1":"str6.jpg"},{"name1":"balls","image1":"balls6.jpg"}]}
+
 
 
   ]
