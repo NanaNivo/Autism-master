@@ -76,6 +76,7 @@ public class level1 extends AppCompatActivity {
                 if (show_image.equals(null))
                     rev.setClickable(false);
                 else {
+                    all_list=new ArrayList<photItem>();
                     all_list = fill_all_list();
                     alllist.setAdapter(new item_adapter(all_list, level1.this));
                 }

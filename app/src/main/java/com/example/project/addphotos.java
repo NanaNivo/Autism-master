@@ -10,10 +10,13 @@ import android.graphics.BitmapFactory;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,12 +27,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 
@@ -54,6 +60,8 @@ public class addphotos extends AppCompatActivity {
     private long startHTime = 0L;
     private Handler customHandler = new Handler();
     String temp_parent1=null;
+    File mPhotoFile;
+   // FileCompressor mCompressor;
     // static  String path,text;
 
     @Override
@@ -93,12 +101,13 @@ public class addphotos extends AppCompatActivity {
                 if (namsize < 5) {
                     Toast.makeText(addphotos.this, "please First Enter the name First", Toast.LENGTH_LONG).show();
                 } else {
-                    Intent openCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                 Intent openCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(openCamera, 2);
 
                 }
             }
         });
+
 
         record_voic.setOnClickListener(new OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -188,6 +197,7 @@ public class addphotos extends AppCompatActivity {
     }
 
 
+
     @TargetApi(Build.VERSION_CODES.O)
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -195,7 +205,7 @@ public class addphotos extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         //if(resultCode == RESULT_OK)
         if (requestCode == 1 && resultCode == RESULT_OK && null != data) {
-            Uri selectedImage = data.getData();
+           Uri selectedImage = data.getData();
             String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
             Cursor cursor = getContentResolver().query(selectedImage,
@@ -212,24 +222,42 @@ public class addphotos extends AppCompatActivity {
         }
         if(requestCode == 2 && resultCode == RESULT_OK && null != data)
         {
-            Uri selectedImage = data.getData();
-            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            addimage.setImageBitmap(photo);
+           // knop.setVisibility(Button.VISIBLE);
 
-            Cursor cursor = getContentResolver().query(selectedImage,
-                    filePathColumn, null, null, null);
-            cursor.moveToFirst();
 
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String picturePath = cursor.getString(columnIndex);
-            cursor.close();
-            //  Toast.makeText(addphotos.this, picturePath,Toast.LENGTH_LONG).show();
+            // CALL THIS METHOD TO GET THE URI FROM THE BITMAP
+            Uri tempUri = getImageUri(getApplicationContext(), photo);
 
-            addimage.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-            image_loaded =saveToInternalStorage(BitmapFactory.decodeFile(picturePath));
+            // CALL THIS METHOD TO GET THE ACTUAL PATH
+           // File finalFile = new File(getRealPathFromURI(tempUri));
+
+           image_loaded =saveToInternalStorage(BitmapFactory.decodeFile(getRealPathFromURI(tempUri)));
 
             }
 
         }
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
+
+    public String getRealPathFromURI(Uri uri) {
+        String path = "";
+        if (getContentResolver() != null) {
+            Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+            if (cursor != null) {
+                cursor.moveToFirst();
+                int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+                path = cursor.getString(idx);
+                cursor.close();
+            }
+        }
+        return path;
+    }
 
     private String saveToInternalStorage(Bitmap bitmapImage){
         // Create imageDir
