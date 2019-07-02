@@ -14,8 +14,8 @@ public class gamtest extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamtest);
-        currentimag=(ImageView)findViewById(R.id.currImage);
-        currentimag.setBackgroundResource(R.drawable.chaircurr1);
+      //  currentimag=(ImageView)findViewById(R.id.currImage);
+       // currentimag.setBackgroundResource(R.drawable.chaircurr1);
 
     }
 

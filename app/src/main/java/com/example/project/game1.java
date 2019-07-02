@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -270,7 +271,9 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                 if(container.equals(findViewById(R.id.linans1)))
                 {
                     //Toast.makeText(this, "ok mmmm ", Toast.LENGTH_SHORT).show();
+                   // answer="img1";
                     if(dragData.equals(answer)) {
+                        Toast.makeText(this, "ok mmmm ", Toast.LENGTH_SHORT).show();
                         Toast.makeText(this, "you win", Toast.LENGTH_SHORT).show();
                         counter1++;
                         coun.setText(String.valueOf(counter1));
@@ -288,11 +291,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                            }
                             edit_fileFinal();
                             if (counter1 < 7) {
-                               /* if (v.equals(hand)) {
-                                    hand.setOnClickListener(this);
-                                    Play(audio);
-                                    v.setClickable(true);
-                                }*/
+
                                 arrayanswer = fill_array_answer();
                                 img1.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(0).phot_img));
                                 img2.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(1).phot_img));
@@ -311,12 +310,14 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                     {
 
                         ((GifDrawable)cry.getDrawable()).reset();
+                        Play(yourAudioPath +"cry.mp3");
 
                     }
                 }
                 else
                 {
                     ((GifDrawable)cry.getDrawable()).reset();
+                    Play(yourAudioPath +"cry.mp3");
 
                 }
                 // Returns true. DragEvent.getResult() will return true.
@@ -365,7 +366,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                      int cc=0;
                     ((GifDrawable) cry.getDrawable()).stop();
                     edit_fileFinal();
-                    if (counter2 < 7&& arrayanswer!=null) {
+                    if (counter2 < 7&& finsh==false) {
                         arrayanswer=fill_array_answer();
                         int c=0;
                      while (pp.isPlaying()) {
@@ -376,12 +377,18 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                         img3.setImageBitmap(BitmapFactory.decodeFile(arrayanswer.get(2).phot_img));
 
                     }
+                    if(finsh==true)
+                    {
+                        Intent intent=new Intent(getApplicationContext(), com.example.project.gamtest.class);
+                        startActivity(intent);
+                    }
                 }
 
                 else
                 {
                     ((GifDrawable) hap.getDrawable()).stop();
                     ((GifDrawable) cry.getDrawable()).reset();
+                    Play(yourAudioPath +"cry.mp3");
                 }
                 }
             }
@@ -461,6 +468,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
     }
    // public ArrayList<photItem> fill_array_answer(String qestion,String ans)
     boolean enter=false;
+    boolean finsh=false;
    public ArrayList<photItem> fill_array_answer()
     {
         ArrayList <photItem> temp=new ArrayList();
@@ -472,7 +480,11 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                 JSONObject jo_inside = m_jArry.getJSONObject(i);
                // String js_qes = jo_inside.getString("qestion");
                 String js_deter=jo_inside.getString("deterqwes");
-                if (js_deter.equals("false")) {
+               if (js_deter.equals("false")) {
+                   if(i== m_jArry.length()-1)
+                    {
+                        finsh=true;
+                    }
                     String js_qes = jo_inside.getString("qestion");
                     if(!js_qes.contains("where"))
                     {
