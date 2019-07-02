@@ -280,6 +280,8 @@ public class MainActivity extends Activity {
         try {
 
             JSONArray m_jArry = read_file("storag_file4.txt");
+            //Log.v("Decompress", m_jArry.length());
+
             for (int i = 0; i < m_jArry.length(); i++) {
 
                 JSONObject jo_inside = m_jArry.getJSONObject(i);
@@ -357,8 +359,12 @@ public class MainActivity extends Activity {
         JSONArray ddd = null;
         try {
             FileInputStream fis = this.openFileInput(name);
+
             InputStreamReader isr = new InputStreamReader(fis);
+
             BufferedReader bufferedReader = new BufferedReader(isr);
+
+
             StringBuilder sb = new StringBuilder();
             String line = null;
             while ((line = bufferedReader.readLine()) != null) {
@@ -377,7 +383,11 @@ public class MainActivity extends Activity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+        try {
+            Log.v("Decompress", ddd.getString(1));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         return ddd;
     }
 
