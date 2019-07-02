@@ -65,7 +65,8 @@ public class level1 extends AppCompatActivity {
         favourite.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-              fav_list= fill_fav_list();
+           //   fav_list= fill_fav_list();
+                all_list= fill_fav_list();
                 alllist.setAdapter(new item_adapter(fav_list, level1.this));
             }
         });
@@ -74,8 +75,10 @@ public class level1 extends AppCompatActivity {
 
                 if (show_image.equals(null))
                     rev.setClickable(false);
-                else
+                else {
+                    all_list = fill_all_list();
                     alllist.setAdapter(new item_adapter(all_list, level1.this));
+                }
                 rev.setClickable(true);
             }
         });
