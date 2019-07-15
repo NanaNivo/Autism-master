@@ -50,14 +50,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-                android:background="@mipmap/favo" />
+                android:background="@drawable/favorate" />
 
             <Button
                 android:id="@+id/revert1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-                android:background="@mipmap/back" />
+                android:background="@drawable/back" />
             </LinearLayout>
 
         </LinearLayout>

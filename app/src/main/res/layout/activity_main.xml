@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns="http://schemas.android.com/apk/res-auto"
-  >
-
-    <LinearLayout
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="4"
         android:background="@android:color/background_light"
         >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_margin="1dp"
-        android:background="@android:drawable/dialog_frame"
+        android:layout_weight="1.5"
+        android:background="@drawable/bar_style"
           android:id="@+id/lin_up_scrol"
         android:orientation="horizontal"
         >
@@ -28,33 +21,36 @@
         <HorizontalScrollView
             android:id="@+id/scrol_item"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:layout_weight="1"
-            android:fillViewport="false"
+            android:fillViewport="true"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
 
                 <GridView
                     android:id="@+id/optionlist"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:clickable="false"
                     android:scrollbars="horizontal"
-                    android:stretchMode="columnWidth" />
+                    android:stretchMode="columnWidth"
+                    android:horizontalSpacing="12dp"
+                    android:padding="12dp"
+
+                    />
 
 
             </LinearLayout>
         </HorizontalScrollView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -66,14 +62,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:layout_gravity="center_vertical"
-                android:background="@mipmap/back" />
+                android:background="@drawable/back" />
             <Button
                 android:id="@+id/talk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:layout_gravity="center_vertical"
-                android:background="@mipmap/speakers"
+                android:background="@drawable/mic"
                 />
 
 
@@ -82,20 +78,23 @@
 
     </LinearLayout>
 
-        <GridView
+       <GridView
             android:id="@+id/gridlist"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
+            android:layout_weight="3.5"
             android:stretchMode="columnWidth"
             android:numColumns="2"
-            android:verticalSpacing="10dp"
-            android:horizontalSpacing="5dp"
+            android:verticalSpacing="20dp"
+            android:horizontalSpacing="10dp"
+           android:background="@drawable/book_style"
+           android:layout_marginTop="12dp"
+           android:padding="12dp"
+           android:paddingBottom="0dp"
             />
 
 
+
+
     </LinearLayout>
-
-
-</RelativeLayout>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.project">
+    package="com.damasUniv.acApp">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -26,27 +26,27 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Project"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".gamtest"></activity>
-        <activity android:name=".game1" />
+        <activity android:name="com.damasUniv.acApp.gamtest"></activity>
+        <activity android:name="com.damasUniv.acApp.game1" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.damasUniv.acApp.LoginActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".level1"
+            android:name="com.damasUniv.acApp.level1"
+            android:theme="@style/pecs" />
+        <activity
+            android:name="com.damasUniv.acApp.addphotos"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".addphotos"
+            android:name="com.damasUniv.acApp.swap_key"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.damasUniv.acApp.MainActivity" android:theme="@style/pecs" />
         <activity
-            android:name=".swap_key"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".MainActivity" />
-        <activity
-            android:name=".hello"
+            android:name="com.damasUniv.acApp.hello"
             android:theme="@style/splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

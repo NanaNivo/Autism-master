@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#23283A</color>
     <color name="colorAccent">#E91E63</color>
     <color name="fff">#fff</color>
+    <color name="pecs_top">#81519C</color>
+    <color name="pecs_bottm">#F58864</color>
 
 </resources>
