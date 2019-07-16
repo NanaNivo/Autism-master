@@ -248,7 +248,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
             case DragEvent.ACTION_DROP:
                 ClipData.Item item = event.getClipData().getItemAt(0);
                 String dragData = item.getText().toString();
-                Toast.makeText(this, "Dragged data is " + dragData, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "Dragged data is " + dragData, Toast.LENGTH_SHORT).show();
                 v.getBackground().clearColorFilter();
                 v.invalidate();
 
@@ -265,8 +265,8 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                     //Toast.makeText(this, "ok mmmm ", Toast.LENGTH_SHORT).show();
                    // answer="img1";
                     if(dragData.equals(answer)) {
-                        Toast.makeText(this, "ok mmmm ", Toast.LENGTH_SHORT).show();
-                        Toast.makeText(this, "you win", Toast.LENGTH_SHORT).show();
+                   //     Toast.makeText(this, "ok mmmm ", Toast.LENGTH_SHORT).show();
+                    //    Toast.makeText(this, "you win", Toast.LENGTH_SHORT).show();
                         counter1++;
                         coun.setText(String.valueOf(counter1));
 
@@ -321,10 +321,10 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                 // Invalidates the view to force a redraw
                 v.invalidate();
                 // Does a getResult(), and displays what happened.
-                if (event.getResult())
-                    Toast.makeText(this, "The drop was handled.", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(this, "The drop didn't work.", Toast.LENGTH_SHORT).show();
+               // if (event.getResult())
+                  //  Toast.makeText(this, "The drop was handled.", Toast.LENGTH_SHORT).show();
+               // else
+                 //   Toast.makeText(this, "The drop didn't work.", Toast.LENGTH_SHORT).show();
                 // returns true; the value is ignored.
                 return true;
             // An unknown action type was received.
@@ -399,7 +399,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
             {
                 View child=container.getChildAt(0);
                 if(!child.equals(vw)) {
-                    Toast.makeText(this, "child" + child.toString(), Toast.LENGTH_LONG).show();
+                  //  Toast.makeText(this, "child" + child.toString(), Toast.LENGTH_LONG).show();
                     if (child.equals(img3)) ;
                     {
                         container.removeView(child);
@@ -480,7 +480,7 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
                     String js_qes = jo_inside.getString("qestion");
                     if(!js_qes.contains("where"))
                     {
-                        Toast.makeText(this,"enter",Toast.LENGTH_LONG).show();
+                       // Toast.makeText(this,"enter",Toast.LENGTH_LONG).show();
                         hand.setBackgroundResource(R.drawable.hand);
                         enter=true;
                         img1.setLongClickable(true);

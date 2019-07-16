@@ -165,7 +165,7 @@ public class level1 extends AppCompatActivity {
 
     public void make_fav(String name)
     {
-        Toast.makeText(level1.this,name,Toast.LENGTH_LONG).show();
+        //Toast.makeText(level1.this,name,Toast.LENGTH_LONG).show();
         FileInputStream fis = null;
         try {
             fis = this.openFileInput("storag_file4.txt");

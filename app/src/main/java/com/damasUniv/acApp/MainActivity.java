@@ -81,7 +81,7 @@ public class MainActivity extends Activity {
         // write_file_image();
         // read_file("storag_image.txt");
 
-        Toast.makeText(MainActivity.this, yourFilePath, Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, yourFilePath, Toast.LENGTH_LONG).show();
         // file.delete();
 
         // if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -95,7 +95,7 @@ public class MainActivity extends Activity {
             String text_name = rever_act.getExtras().getString("text");
             String text_voice = rever_act.getExtras().getString("voice");
             String text_par = rever_act.getExtras().getString("perent");
-             Toast.makeText(MainActivity.this,text_par,Toast.LENGTH_LONG).show();
+            // Toast.makeText(MainActivity.this,text_par,Toast.LENGTH_LONG).show();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 write_json_to_file(imag_path, text_name, text_par, text_voice);
             }
