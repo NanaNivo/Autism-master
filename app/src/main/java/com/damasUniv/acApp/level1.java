@@ -45,7 +45,7 @@ public class level1 extends AppCompatActivity {
         // con_imag=(LinearLayout)findViewById(R.id.imag_in_lin);
         rev = (Button) findViewById(R.id.revert1);
         favourite = (Button) findViewById(R.id.fav);
-        show_image = (SquareImageView) findViewById(R.id.image_level1);
+       show_image = (SquareImageView) findViewById(R.id.image_level1);
        all_list = fill_all_list();
         alllist = (GridView) findViewById(R.id.gridlist1);
 
