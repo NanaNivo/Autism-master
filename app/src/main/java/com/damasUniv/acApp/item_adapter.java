@@ -43,7 +43,7 @@ public class item_adapter extends BaseAdapter  {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
        LayoutInflater r =cc.getLayoutInflater();
-        // LayoutInflater r  = (LayoutInflater) LayoutInflater.from(MainActivity.this);
+        //LayoutInflater r  = (LayoutInflater) LayoutInflater.from(MainActivity.this);
         final View view = (View) r.inflate(R.layout.item_list,null);
 
 

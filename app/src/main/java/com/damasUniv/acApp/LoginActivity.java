@@ -96,6 +96,9 @@ public class LoginActivity extends Activity {
 
                         hideDialog();
                         try {
+
+                             Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+
                             //converting response to json object
                             JSONObject obj = new JSONObject(response);
 

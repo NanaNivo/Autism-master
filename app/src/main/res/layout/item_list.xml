@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
@@ -41,7 +41,9 @@
 
     </LinearLayout>
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>
+
+
 <!--
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -51,7 +53,7 @@
     android:background="@drawable/shadow"
     android:orientation="vertical">
 
-     <android:com.example.project.SquareImageView
+     <android:com.damasUniv.acApp.SquareImageView
         android:id="@+id/imag"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

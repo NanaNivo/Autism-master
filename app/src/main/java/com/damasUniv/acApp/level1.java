@@ -3,14 +3,13 @@ package com.damasUniv.acApp;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
