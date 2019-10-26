@@ -32,6 +32,7 @@ import java.io.IOException;
 import static com.damasUniv.acApp.MainActivity.find_intent;
 import static com.damasUniv.acApp.hello.yourAudioPath;
 import static com.damasUniv.acApp.hello.yourFilePath;
+import static com.damasUniv.acApp.swap_key.chose;
 
 
 public class addphotos extends AppCompatActivity {
@@ -167,7 +168,9 @@ public class addphotos extends AppCompatActivity {
                     }
 
                     if (namsize >= 5 && mediaRecorder != null && image_loaded != null) {
-                        Intent intt = new Intent(getApplicationContext(), MainActivity.class);
+                        if (chose==2)
+                        {
+                            Intent intt = new Intent(getApplicationContext(), MainActivity.class);
                         intt.putExtra("path", pp);
                         intt.putExtra("voice", vv);
                         intt.putExtra("perent", temp_parent1);
@@ -175,6 +178,18 @@ public class addphotos extends AppCompatActivity {
                         intt.putExtra("text", text_phot.getText().toString());
                         find_intent = 1;
                         startActivity(intt);
+                    }
+                        else
+                        {
+                            Intent intt = new Intent(getApplicationContext(), level1.class);
+                            intt.putExtra("path", pp);
+                            intt.putExtra("voice", vv);
+                            intt.putExtra("perent", temp_parent1);
+                            //Toast.makeText(addphotos.this,text_phot.getText().toString(),Toast.LENGTH_LONG).show();
+                            intt.putExtra("text", text_phot.getText().toString());
+                            find_intent = 1;
+                            startActivity(intt);
+                        }
                     }
 
                 }

@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 import static com.damasUniv.acApp.hello.yourAudioPath;
 import static com.damasUniv.acApp.hello.yourFilePath;
-
+import static com.damasUniv.acApp.swap_key.chose;
 public class MainActivity extends Activity {
 
 
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
-
+        chose=2;
         //final String[] list_of_categ_name = getResources().getStringArray(R.array.catger_list);
        // final String[] list_of_fell_name = getResources().getStringArray(R.array.list_felling);
         super.onCreate(savedInstanceState);

@@ -17,13 +17,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class swap_key extends AppCompatActivity {
+public class swap_key<Static> extends AppCompatActivity {
     private final static int REQUEST_CODE_ASK_PERMISSIONS = 1;
     private static final String[] REQUIRED_SDK_PERMISSIONS = new String[] {
             Manifest.permission.WRITE_EXTERNAL_STORAGE ,Manifest.permission.CAMERA ,Manifest.permission.RECORD_AUDIO };
 
     Button play;
     Button pecs;
+    static int chose=0;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

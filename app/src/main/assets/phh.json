@@ -89,7 +89,7 @@
 
     {"id": 45 , "name": "بابا", "Image": "dad.jpg", "parent": "People" ,"ِAudio":"baba.mp3","level1":"true","fav":0},
 
-   {"id": 46, "name": "اضافة1", "Image": "add.jpg", "parent": "root" ,"ِAudio" :"","level1":"false","fav":0},
+   {"id": 46, "name": "اضافة1", "Image": "add.jpg", "parent": "root" ,"ِAudio" :"","level1":"true","fav":0},
 
    {"id": 47, "name": "اضافة2", "Image": "add.jpg", "parent": "أنا" ,"ِAudio" :"","level1":"false","fav":0},
 
