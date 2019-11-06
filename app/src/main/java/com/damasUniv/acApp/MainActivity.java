@@ -61,6 +61,12 @@ public class MainActivity extends Activity {
     private long then;
     private int longClickDur = 5000;
 
+    @Override
+    public  void onBackPressed(){
+        Intent back = new Intent(getApplicationContext(), swap_key.class);
+        startActivity(back);
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override

@@ -46,6 +46,11 @@ public class level1 extends AppCompatActivity {
     GridView alllist;
     String path_image;
     @Override
+    public  void onBackPressed(){
+        Intent back = new Intent(getApplicationContext(), swap_key.class);
+        startActivity(back);
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level1);

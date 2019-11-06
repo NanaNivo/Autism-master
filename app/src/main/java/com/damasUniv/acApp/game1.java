@@ -54,6 +54,11 @@ public class game1 extends AppCompatActivity implements View.OnDragListener, Vie
     private android.widget.RelativeLayout.LayoutParams layoutParams;
     String msg;
     @Override
+    public  void onBackPressed(){
+        Intent back = new Intent(getApplicationContext(), swap_key.class);
+        startActivity(back);
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game1);
