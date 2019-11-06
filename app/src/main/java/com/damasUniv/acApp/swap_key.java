@@ -26,6 +26,12 @@ public class swap_key<Static> extends AppCompatActivity {
     Button pecs;
     static int chose=0;
     @Override
+    public  void onBackPressed(){
+        Intent back = new Intent(getApplicationContext(), swap_key.class);
+        startActivity(back);
+
+    }
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.swap_key);
