@@ -1,13 +1,18 @@
 package com.damasUniv.acApp;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -22,6 +27,23 @@ public class hello extends AppCompatActivity {
     static String yourFilePath, yourAudioPath;
 
     private ProgressDialog pDialog;
+/*
+    private DialogInterface.OnClickListener onDismiss = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            if (SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()) {
+
+                startActivity(new Intent(getApplicationContext(), swap_key.class));
+                finish();
+            } else {
+
+                Intent intent = new Intent(getApplicationContext(), com.damasUniv.acApp.LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+        }
+    };*/
 
     public void unzip() {
         File n = new File(yourAudioPath);
@@ -29,17 +51,17 @@ public class hello extends AppCompatActivity {
 
         File n2 = new File(yourFilePath);
         n2.mkdir();
-        try  {
+        try {
             InputStream fin = this.getAssets().open("files.zip");
             ZipInputStream zin = new ZipInputStream(fin);
             ZipEntry ze = null;
             while ((ze = zin.getNextEntry()) != null) {
                 Log.v("Decompress", "Unzipping " + ze.getName());
 
-                if(ze.isDirectory()) {
+                if (ze.isDirectory()) {
                     dirChecker(ze.getName());
                 } else {
-                    FileOutputStream fout = new FileOutputStream(this.getFilesDir()+File.separator+ze.getName());
+                    FileOutputStream fout = new FileOutputStream(this.getFilesDir() + File.separator + ze.getName());
                     for (int c = zin.read(); c != -1; c = zin.read()) {
                         fout.write(c);
                     }
@@ -50,7 +72,7 @@ public class hello extends AppCompatActivity {
 
             }
             zin.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             Log.e("Decompress", "unzip", e);
         }
 
@@ -59,10 +81,11 @@ public class hello extends AppCompatActivity {
     private void dirChecker(String dir) {
         File f = new File(dir);
 
-        if(!f.isDirectory()) {
+        if (!f.isDirectory()) {
             f.mkdirs();
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -71,41 +94,35 @@ public class hello extends AppCompatActivity {
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
 
-      yourFilePath = this.getFilesDir() + "/"+"images"+"/";
-       yourAudioPath=this.getFilesDir() + "/"+"audio"+"/";
-
+        yourFilePath = this.getFilesDir() + "/" + "images" + "/";
+        yourAudioPath = this.getFilesDir() + "/" + "audio" + "/";
 
 
         pDialog.setMessage("Loading Data ...");
 
 
-
-
-        textView=(TextView) findViewById(R.id.textView);
-        anim= AnimationUtils.loadAnimation(this,R.anim.down);
+        textView = (TextView) findViewById(R.id.textView);
+        anim = AnimationUtils.loadAnimation(this, R.anim.down);
 
         textView.setAnimation(anim);
 
 
-
-
-        final Thread thread=new Thread(){
-            public void run(){
+        final Thread thread = new Thread() {
+            public void run() {
                 try {
 
-                    sleep(1200);
 
+                    sleep(1200);
                     if (SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()) {
 
                         startActivity(new Intent(getApplicationContext(), swap_key.class));
                         finish();
-                    }else {
+                    } else {
 
-                        Intent intent=new Intent(getApplicationContext(), com.damasUniv.acApp.LoginActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), com.damasUniv.acApp.LoginActivity.class);
                         startActivity(intent);
                         finish();
-                 }
-
+                    }
 
 
                 } catch (InterruptedException e) {
@@ -115,11 +132,12 @@ public class hello extends AppCompatActivity {
 
         };
 
-        Thread sss=new Thread(new Runnable(){
 
-            public void run(){
+        Thread sss = new Thread(new Runnable() {
+
+            public void run() {
                 unzip();
-                runOnUiThread(new Runnable(){
+                runOnUiThread(new Runnable() {
 
                     @Override
                     public void run() {
@@ -136,34 +154,20 @@ public class hello extends AppCompatActivity {
 
 
 
+
         if (!SharedPrefManager.getInstance(getApplicationContext()).isFirstOpen()) {
             showDialog();
-            sss.start();
+             sss.start();
             SharedPrefManager.getInstance(getApplicationContext()).open();
 
 
-        }else{
+        } else {
             thread.start();
+
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
 
 
     private void showDialog() {
