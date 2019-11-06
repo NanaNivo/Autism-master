@@ -25,8 +25,10 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import static com.damasUniv.acApp.MainActivity.find_intent;
@@ -207,7 +209,7 @@ public class addphotos extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         //if(resultCode == RESULT_OK)
         if (requestCode == 1 && resultCode == RESULT_OK && null != data) {
-           Uri selectedImage = data.getData();
+          Uri selectedImage = data.getData();
             String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
             Cursor cursor = getContentResolver().query(selectedImage,
@@ -221,19 +223,26 @@ public class addphotos extends AppCompatActivity {
 
             addimage.setImageBitmap(BitmapFactory.decodeFile(picturePath));
             image_loaded =saveToInternalStorage(BitmapFactory.decodeFile(picturePath));
+
+
+
+           /* Uri photo_uri = data.getData();
+            try {
+                InputStream imagestream = getContentResolver().openInputStream(photo_uri);
+                Bitmap selected_photo = BitmapFactory.decodeStream(imagestream);
+                addimage.setImageBitmap(selected_photo);
+                Uri tempUri = getImageUri(getApplicationContext(), selected_photo);
+                image_loaded =saveToInternalStorage(BitmapFactory.decodeFile(getRealPathFromURI(tempUri)));
+
+            }catch (FileNotFoundException FNFE) {
+                Toast.makeText(addphotos.this, FNFE.getMessage(), Toast.LENGTH_LONG).show();
+            }*/
         }
         if(requestCode == 2 && resultCode == RESULT_OK && null != data)
         {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             addimage.setImageBitmap(photo);
-           // knop.setVisibility(Button.VISIBLE);
-
-
-            // CALL THIS METHOD TO GET THE URI FROM THE BITMAP
             Uri tempUri = getImageUri(getApplicationContext(), photo);
-
-            // CALL THIS METHOD TO GET THE ACTUAL PATH
-           // File finalFile = new File(getRealPathFromURI(tempUri));
 
            image_loaded =saveToInternalStorage(BitmapFactory.decodeFile(getRealPathFromURI(tempUri)));
 

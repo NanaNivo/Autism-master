@@ -1,11 +1,15 @@
 package com.damasUniv.acApp;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,8 +31,43 @@ public class swap_key<Static> extends AppCompatActivity {
     static int chose=0;
     @Override
     public  void onBackPressed(){
-        Intent back = new Intent(getApplicationContext(), swap_key.class);
-        startActivity(back);
+       // Intent back = new Intent(getApplicationContext(), swap_key.class);
+       // startActivity(back);
+       AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Exit Application?");
+        alertDialogBuilder
+                .setMessage("Click yes to exit!")
+                .setCancelable(false)
+                .setPositiveButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+                            public void onClick(DialogInterface dialog, int id) {
+                                moveTaskToBack(true);
+                               // android.os.Process.killProcess(android.os.Process.myPid());
+                               // System.exit(1);
+                                finishAffinity();
+                                System.exit(0);
+
+                            }
+                        })
+
+
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+
+     /*   this.finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);*/
 
     }
     @Override
