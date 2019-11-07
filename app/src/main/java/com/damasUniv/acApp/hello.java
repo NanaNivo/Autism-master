@@ -12,13 +12,29 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+import android.widget.Toast;
 
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
+import static com.damasUniv.acApp.AppConfig.URL_LOGIN;
 
 public class hello extends AppCompatActivity {
 
@@ -44,6 +60,74 @@ public class hello extends AppCompatActivity {
 
         }
     };*/
+    String getlevelFromServer() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+
+                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+
+                            //converting response to json object
+                            JSONObject obj = new JSONObject(response);
+
+                            //if no error in response
+                            if (!obj.getBoolean("error")) {
+
+                               // String uid = obj.getString("user_id");
+                                String level = obj.getString("user_level");
+                                //  Toast.makeText(getApplicationContext(), obj.getString("user_id"), Toast.LENGTH_SHORT).show();
+
+                                SharedPrefManager.getInstance(getApplicationContext()).setLevel(level);
+/*
+                                Toast.makeText(getApplicationContext(),
+                                        uid + " "+level , Toast.LENGTH_LONG).show();
+
+*/
+                                //startActivity(new Intent(getApplicationContext(), swap_key.class));
+                                //finish();
+                               /* if(SharedPrefManager.getInstance(getApplicationContext()).getUser_level() == 1){
+                                    startActivity(new Intent(getApplicationContext(), level1.class));
+                                }else{
+                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                }*/
+
+                            } else {
+                                Toast.makeText(getApplicationContext(), "UserName Or Password Error!", Toast.LENGTH_SHORT).show();
+                                //startActivity(new Intent(getApplicationContext(), game1.class));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        hideDialog();
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("user_id", SharedPrefManager.getInstance(getApplicationContext()).getUser_id());
+                params.put("op", "get_level");
+
+               // params.put("password", password);
+                return params;
+            }
+        };
+
+        VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
+        return  "1";
+    }
+
 
     public void unzip() {
         File n = new File(yourAudioPath);
@@ -86,6 +170,19 @@ public class hello extends AppCompatActivity {
         }
     }
 
+    public boolean isConnectedToServer(String url, int timeout) {
+        try{
+            URL myUrl = new URL(url);
+            URLConnection connection = myUrl.openConnection();
+            connection.setConnectTimeout(timeout);
+            connection.connect();
+            return true;
+        } catch (Exception e) {
+            // Handle your exceptions
+            return false;
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -114,7 +211,10 @@ public class hello extends AppCompatActivity {
 
                     sleep(1200);
                     if (SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()) {
-
+                        if(isConnectedToServer(URL_LOGIN, 1200)) {
+                            getlevelFromServer();
+                        }
+                        sleep(1200);
                         startActivity(new Intent(getApplicationContext(), swap_key.class));
                         finish();
                     } else {

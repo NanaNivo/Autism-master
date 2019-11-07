@@ -27,8 +27,8 @@ public class SharedPrefManager {
     public void userLogin(String user_id,String levle) {
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(KEY_id, Integer.parseInt(user_id));
-        editor.putInt(KEY_level, Integer.parseInt(levle));
+        editor.putString(KEY_id, user_id);
+        editor.putString(KEY_level, levle);
 
         editor.apply();
     }
@@ -36,7 +36,7 @@ public class SharedPrefManager {
     //this method will checker whether user is already logged in or not
     public boolean isLoggedIn() {
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getInt(KEY_id, -1) != -1;
+        return sharedPreferences.getString(KEY_id, null) != null;
     }
 
 
@@ -53,10 +53,10 @@ public class SharedPrefManager {
     }
 
     //this method will give the logged in user
-    public int getUser_id() {
+    public String getUser_id() {
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
 
-        return sharedPreferences.getInt(KEY_id, -1);
+        return sharedPreferences.getString(KEY_id, "null");
        /* return new User(
                 sharedPreferences.getInt(KEY_ID, -1),
                 sharedPreferences.getString(KEY_USERNAME, null),
@@ -65,10 +65,10 @@ public class SharedPrefManager {
         );*/
     }
 
-    public int getUser_level() {
+    public String getUser_level() {
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
 
-        return sharedPreferences.getInt(KEY_level, -1);
+        return sharedPreferences.getString(KEY_level, null);
        /* return new User(
                 sharedPreferences.getInt(KEY_ID, -1),
                 sharedPreferences.getString(KEY_USERNAME, null),
@@ -84,5 +84,15 @@ public class SharedPrefManager {
         editor.clear();
         editor.apply();
         ctx.startActivity(new Intent(ctx, LoginActivity.class));
+    }
+
+    public void setLevel(String level) {
+
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+     //   editor.putString(KEY_id, user_id);
+        editor.putString(KEY_level, level);
+
+        editor.apply();
     }
 }

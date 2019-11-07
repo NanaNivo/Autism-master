@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\Nivo\\Desktop\\autism.jks')
+            storePassword 'mero22.4.1997'
+            keyAlias = 'key0'
+            keyPassword 'mero22.4.1997'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.damasUniv.acApp"

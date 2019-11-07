@@ -91,7 +91,7 @@ public class swap_key<Static> extends AppCompatActivity {
         pecs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(SharedPrefManager.getInstance(getApplicationContext()).getUser_level() == 1){
+                if(SharedPrefManager.getInstance(getApplicationContext()).getUser_level().equals("1")){
 
                     startActivity(new Intent(getApplicationContext(), level1.class));
                 }else{
